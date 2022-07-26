@@ -1,0 +1,459 @@
+/* your styles go here */
+
+.four {
+    width: 40%;
+}
+
+.five {
+    width: 50%;
+}
+
+.six {
+    width: 60%;
+}
+
+.seven {
+    width: 70%;
+}
+
+.two {
+    width: 20%;
+}
+
+.full {
+    width: 100%;
+}
+
+.five1 {
+    width: 55%;
+}
+
+.five-1 {
+    width: 750px;
+}
+
+.hsix {
+    height: 80%;
+}
+
+.item {
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding-bottom: 0.25rem !important;
+    margin-bottom: 3rem !important;
+}
+
+.tns-custom-controls {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: flex-end;
+    margin-right: -0.6875rem;
+    margin-left: -0.6875rem;
+    z-index: 9;
+}
+
+.tns-custom-controls:focus {
+    outline: initial;
+}
+
+@media (max-width: 575.98px) {
+    .tns-custom-controls {
+        margin-right: -0.3875rem;
+        margin-left: -0.3875rem;
+    }
+}
+
+.tns-controls-inverse [data-controls],
+.tns-controls-outside [data-controls] {
+    background-color: transparent;
+    color: #424551;
+}
+
+.tns-controls-inverse [data-controls]:hover,
+.tns-controls-outside [data-controls]:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.tns-controls-outside.tns-controls-inverse [data-controls] {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #424551;
+}
+
+.tns-controls-outside.tns-controls-inverse [data-controls]:hover {
+    background-color: #fff;
+    color: #424551;
+}
+
+.tns-controls-inverse [data-controls] {
+    color: #fff;
+}
+
+.text-theme {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-theme-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-theme {
+    color: #5DA5B6 !important;
+}
+
+.img_noboarder {
+    border: 1px none;
+}
+
+.tns-carousel-wrapper .tns-carousel-inner {
+    position: relative;
+    overflow: hidden;
+    touch-action: manipulation;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    opacity: 0;
+}
+
+.card-product {
+    max-width: 22rem;
+    margin-right: auto;
+    margin-left: auto;
+    border: 0;
+    box-shadow: none;
+    background-color: transparent
+}
+
+.card-product-img {
+    position: relative
+}
+
+.card-img1,
+.card-img-top1 {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+}
+
+.card2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid #e5e8ed;
+    border-radius: .25rem
+}
+
+.card-product-widgets-top,
+.card-product-widgets-bottom {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    left: 0;
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    z-index: 1
+}
+
+.card-product-widgets-top {
+    top: 0;
+    padding-top: 1rem
+}
+
+.badge2 {
+    display: inline-block;
+    padding: .25rem .5rem;
+    font-size: 0.75em;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25rem
+}
+
+.product-badge {
+    padding: .5rem;
+    font-size: 1rem;
+    font-weight: 700
+}
+
+.star-rating {
+    font-size: .875rem;
+    color: #b5b5ba
+}
+
+.star-rating .active {
+    color: #f89828
+}
+
+.btn-wishlist {
+    display: inline-block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    background-color: #fff;
+    color: #787a80;
+    transition: background-color .3s, color .3s;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 50%
+}
+
+.card-body3 {
+    flex: 1 1 auto;
+    padding: 1.5rem 1.5rem
+}
+
+.card-product-title {
+    font-weight: 400;
+    color: #424551;
+    font-size: 1.125rem
+}
+
+@font-face {
+    font-family: 'NanumSquareRound';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundR.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareRoundB';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundB.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareRoundEB';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundEB.ttf) format("truetype");
+}
+
+@font-face {
+    font-family: 'NanumSquareRoundL';
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot);
+    src: url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.eot?#iefix) format("embedded-opentype"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff2) format("woff2"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.woff) format("woff"), url(https://hangeul.pstatic.net/hangeul_static/webfont/NanumSquareRound/NanumSquareRoundL.ttf) format("truetype");
+}
+
+.fontEB {
+    font-family: 'NanumSquareRoundEB'
+}
+
+.logo {
+    width: 80%;
+}
+
+.container8 {
+    width: 80%;
+    padding-right: var(--bs-gutter-x, 0.75rem);
+    padding-left: var(--bs-gutter-x, 0.75rem);
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.col-lg-9-1 {
+    flex: 0 0 auto;
+    width: 71%;
+}
+
+.col-lg-10-1 {
+    flex: 0 0 auto;
+    width: 81%;
+}
+
+.card-body-left {
+    flex: 1 1 auto;
+    padding: 1.2rem 1.2rem;
+    text-align: left;
+}
+
+.col-lg-3-1 {
+    flex: 0 0 auto;
+    width: 30%;
+}
+
+.card-body2 {
+    flex: 1 1 auto;
+    padding: 1.2rem 1.2rem;
+}
+
+.card-body-center {
+    flex: 1 1 auto;
+    padding: 1.2rem 1.2rem;
+    text-align: center;
+}
+
+.font5 {
+    font-size: 1.5rem;
+}
+
+.font3 {
+    font-size: 1.3rem;
+}
+
+.wrap {
+    position: absolute;
+    left: 0;
+    bottom: 40px;
+    width: 288px;
+    height: 132px;
+    margin-left: -144px;
+    text-align: left;
+    overflow: hidden;
+    font-size: 12px;
+    font-family: 'Malgun Gothic', dotum, '돋움', sans-serif;
+    line-height: 1.5;
+}
+
+.wrap * {
+    padding: 0;
+    margin: 0;
+}
+
+.wrap .info {
+    width: 286px;
+    height: 120px;
+    border-radius: 5px;
+    border-bottom: 2px solid #ccc;
+    border-right: 1px solid #ccc;
+    overflow: hidden;
+    background: #fff;
+}
+
+.wrap .info:nth-child(1) {
+    border: 0;
+    box-shadow: 0px 1px 2px #888;
+}
+
+.info .title {
+    padding: 5px 0 0 10px;
+    height: 30px;
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.info .close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #888;
+    width: 17px;
+    height: 17px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');
+}
+
+.info .close:hover {
+    cursor: pointer;
+}
+
+.info .body {
+    position: relative;
+    overflow: hidden;
+}
+
+.info .desc {
+    position: relative;
+    margin: 13px 0 0 90px;
+    height: 75px;
+}
+
+.desc .ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.desc .jibun {
+    font-size: 11px;
+    color: #888;
+    margin-top: -2px;
+}
+
+.info .img {
+    position: absolute;
+    top: 6px;
+    left: 5px;
+    width: 73px;
+    height: 71px;
+    border: 1px solid #ddd;
+    color: #888;
+    overflow: hidden;
+}
+
+.info:after {
+    content: '';
+    position: absolute;
+    margin-left: -12px;
+    left: 50%;
+    bottom: 0;
+    width: 22px;
+    height: 12px;
+    background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')
+}
+
+.info .link {
+    color: #5085BB;
+}
+
+#left-line span:nth-child(n+2) {
+    position: relative;
+    margin-left: 5px;
+    padding-left: 10px;
+}
+
+#left-line span:nth-child(n+2)::after {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    content: "";
+    width: 1px;
+    height: 25px;
+    background-color: #5DA5B6;
+}
+
+.box {
+    border: 2px solid;
+    border-color: gray;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 1.5rem;
+    text-align: left;
+}
+
+.boardimg {
+    height: 250px;
+    width: 250px;
+}
+
+.faimg {
+    height: 250px;
+    width: 400px;
+}
+
+.faimg2 {
+    height: 300px;
+    width: 300px;
+}
+
+.hero-home2 {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .hero-home2 {
+        min-height: 450px;
+    }
+}
+.boardlist {
+    list-style-type: square;
+    border-bottom: 0.5px dotted;
+    border-color: gray;
+}
