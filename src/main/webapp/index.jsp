@@ -1,3 +1,5 @@
+<%@page import="com.kh.beach.model.vo.Beach"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.HashMap"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.kh.common.util.PageInfo"%>
@@ -8,10 +10,67 @@
     pageEncoding="UTF-8"%>
 <%@include file="/views/common/header.jsp" %>
 <%
-List<Board> bList1 = null;
-List<Board> bList2 = null;
-List<Board> bList3 = null;
+List<Board> list = (List<Board>)request.getAttribute("bList");
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy.M.d");
+
+List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
 %>
+
+<script>
+
+	function dateParsing(date){
+		str = date.substring(7,11)+'.'+date.substring(0,date.indexOf('월'))+'.'+date.substring(3,5);
+        return str;
+	}
+	
+	
+    function indexajax(category){
+    	$.ajax(
+    			{type: 'get',
+	            url: 'indexajax',
+	            data : {category},
+	            dataType: 'json',
+	            success: (list) => {
+	            	
+	            	var str='<div class="tab-pane fade show active" id="free" role="tabpanel">'
+                	    +	'<form action="#">'
+                		+		'<div class="row">'
+                	    +			'<div class=" d-flex align-items-center form-group no-divider">'
+                		+			    '<ul>' ;
+                	if(list!=''){
+	                	$.each(list, (i, obj) => {
+	                		for(v in obj){console.log(v)}
+	                		
+	                		str += 	'<li class="boardlist" style="width:470px;"><a class="text-black font3 mb-n1" '
+		                		+	'href="<%=path%>/board/view?boardNo='+obj.board_no+'" style="display:inline-block;'
+		                		+	'width:350px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'
+		                		+	obj.board_title
+		                		+	'</a><span class="text-block" style="display:inline-block;float:right;padding-top:8px;margin-bottom:-20px;">'
+		                		+	dateParsing(obj.board_mdf_date)
+		                		+	'</span></li>';
+	                	})
+	                }else{
+	                	str += 	'<li class="boardlist" style="width:470px;text-align:center;list-style:none;border:none;">'
+	                	    +	'<p class="text-black font3"'
+	                	    +	'style="margin-bottom:-10px;display:inline-block;width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">'
+	                	    +	'조회된 게시글이 없습니다.</p>'
+	                	    +	'<span class="text-block font3" style="float:right;"></span></li>';
+	                };
+	                str +=		    '</ul>'
+            	    +			'</div>'
+            	    +		'</div>'
+            		+    '</form>'
+            	    +'</div>'
+	                document.getElementById('ajax1').innerHTML +=str;
+	                $('#ajax1').html(str);
+	            },
+	            error: (e) => {
+	                $('#ajax1').html('DB Error');
+	                console.log(e);
+	            }}
+    		);
+    }
+    </script>
     <!-- 히어로 -->
     <section class="hero-home2">
         <div class="swiper-container hero-slider">
@@ -30,18 +89,18 @@ List<Board> bList3 = null;
                         <h1 class="display-3 fw-bold text-shadow">SURF THE WORLD</h1>
                     </div>
                     <div class="search-bar mt-5 p-3 p-lg-1 ps-lg-4">
-                        <form action="#">
+                        <form action="<%=path %>/beach/list" method="get">
                             <div class="row">
                                 <div class="col-lg-7 d-flex align-items-center form-group">
-                                    <input class="form-control border-0 shadow-0" type="text" name="search" placeholder="What are you searching for?">
+                                    <input class="form-control border-0 shadow-0" type="text" name="searchValue" placeholder="What are you searching for?">
                                 </div>
                                 <div class="col-lg-3 d-flex align-items-center form-group no-divider">
-                                    <select class="selectpicker" title="location" data-style="btn-form-control">
-                                        <option value="전국">전국</option>
+                                    <select class="selectpicker" title="location" name="locName" data-style="btn-form-control">
+                                        <option value="전국" selected>전국</option>
                                         <option value="서해">서해</option>
                                         <option value="남해">남해</option>
                                         <option value="동해">동해</option>
-                                        <option value="제주도">제주도</option>
+                                        <option value="제주도">제주</option>
                                     </select>
                                 </div>
                                 <div class="col-lg-2 d-grid">
@@ -63,53 +122,34 @@ List<Board> bList3 = null;
                     <p class="subtitle text-primary">Stay and eat like a local</p>
                     <h3>Our guides</h3>
                 </div>
-                <div class="col-md-4 d-lg-flex align-items-center justify-content-end"><a class="text-muted text-sm" href="bpop.html">
+                <div class="col-md-4 d-lg-flex align-items-center justify-content-end"><a class="text-muted text-sm" href="<%=path%>/beach/pop">
                See all guides<i class="fas fa-angle-double-right ms-2"></i></a></div>
             </div>
             <div class="swiper-container guides-slider mx-n2 pt-3">
                 <!-- Additional required wrapper-->
                 <div class="swiper-wrapper pb-4">
                     <!-- Slides-->
+                    <%
+                    if (pbList != null && pbList.isEmpty() == false){
+                    	for (int i = 0 ; i < 5 ; i++ ){
+                  	%>
                     <div class="swiper-slide h-auto px-2">
                         <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="resources/resources/images/pop1.jpg" alt="Card image">
+                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="<%=pbList.get(i).getBEACH_IMG() != null? pbList.get(i).getBEACH_IMG().split(",")[0]:"" %>" alt="Card image">
                             <div class="card-body-center overlay-content">
-                                <h5 class="card-title text-shadow text-uppercase">Busan</h5>
+                                <h5 class="card-title text-shadow text-uppercase"><%=pbList.get(i).getBEACH_NAME() %></h5>
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="resources/resources/images/pop2.jpg" alt="Card image">
-                            <div class="card-body-center overlay-content">
-                                <h5 class="card-title text-shadow text-uppercase">Chungnam</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="resources/resources/images/pop3.jpg" alt="Card image">
-                            <div class="card-body-center overlay-content">
-                                <h5 class="card-title text-shadow text-uppercase">Jeju</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="resources/resources/images/pop4.jpg" alt="Card image">
-                            <div class="card-body-center overlay-content">
-                                <h5 class="card-title text-shadow text-uppercase">incheon</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide h-auto px-2">
-                        <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="resources/resources/images/pop5.jpg" alt="Card image">
-                            <div class="card-body-center overlay-content">
-                                <h5 class="card-title text-shadow text-uppercase">Gangwon</h5>
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                    	}
+                    } else {
+                    %>
+                    	Error!
+                    <%
+                    }
+                    %>
+                    
                 </div>
                 <div class="swiper-pagination d-md-none"> </div>
             </div>
@@ -193,67 +233,30 @@ List<Board> bList3 = null;
                 <!-- 자유게시판 -->
                 <div class="four">
                     <ul class="nav nav-tabs" role="tablist">
-                        <li class="nav-item"><a class="nav-link active font3" href="#notice" data-bs-toggle="tab" role="tab">공지 사항</a></li>
-                        <li class="nav-item"><a class="nav-link font3" href="#free" data-bs-toggle="tab" role="tab">자유게시판</a></li>
-                        <li class="nav-item"><a class="nav-link font3" href="#location" data-bs-toggle="tab" role="tab">지역별 게시판</a></li>
+                        <li class="nav-item"><a class="nav-link active font3" href="#notice" data-bs-toggle="tab" role="tab" onclick="indexajax('1');">공지 사항</a></li>
+                        <li class="nav-item"><a class="nav-link font3" href="#free" data-bs-toggle="tab" role="tab" onclick="indexajax('2');">자유게시판</a></li>
+                        <li class="nav-item"><a class="nav-link font3" href="#location" data-bs-toggle="tab" role="tab" onclick="indexajax(3456);">지역별 게시판</a></li>
                     </ul>
-                    <div class="tab-content ">
+                    <div class="tab-content" id="ajax1">
                         <div class="tab-pane fade show active" id="notice" role="tabpanel">
                             <form action="#">
                                 <div class="row">
                                     <div class=" d-flex align-items-center form-group no-divider">
                                         <ul style="padding-left: 2rem;">
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">여기는 공지사항입니다.</a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">저희 홈페이지를 이용하실때에는 </a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">이러쿵 저러쿵 이용해주세욥</a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">틴탑위고락킹드랍잇탑잇헤이돈스탑잇팝잇더 길게 쓰면 어떻게 될까? </a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html"> 거꾸로해도 똑바로해도 우영우</a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">틴탑위고락킹드랍잇탑잇헤이돈스탑잇팝잇 </a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html"> 거꾸로해도 똑바로해도 우영우</a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                            <li class="boardlist"><a class="text-black font3" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade show " id="free" role="tabpanel">
-                            <form action="#">
-                                <div class="row">
-                                    <div class=" d-flex align-items-center form-group no-divider">
-                                        <ul id="boardList">
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">여기는 자유 게시판입니다.</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">저희 홈페이지를 이용하실때에는 </a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">이러쿵 저러쿵 이용해주세욥</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">틴탑위고락킹드랍잇탑잇헤이돈스탑잇팝잇 </a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html"> 거꾸로해도 똑바로해도 우영우</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">틴탑위고락킹드랍잇탑잇헤이돈스탑잇팝잇 </a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html"> 거꾸로해도 똑바로해도 우영우</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        <div class="tab-pane fade show " id="location" role="tabpanel">
-                            <form action="#">
-                                <div class="row">
-                                    <div class=" d-flex align-items-center form-group no-divider">
-                                        <ul>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">여기는 지역별 게시판입니다.</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">저희 홈페이지를 이용하실때에는 </a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">이러쿵 저러쿵 이용해주세욥</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">틴탑위고락킹드랍잇탑잇헤이돈스탑잇팝잇 </a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html"> 거꾸로해도 똑바로해도 우영우</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">틴탑위고락킹드랍잇탑잇헤이돈스탑잇팝잇 </a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html"> 거꾸로해도 똑바로해도 우영우</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                            <li class="boardlist"><a class="text-black font5" href="board.html">기러기 토마토 스위스 인도인 별똥별</a></li>
-                                        </ul>
+                                        <%
+                                        if (list != null && list.isEmpty() == false){ 
+                                        	for (Board b : list){
+                                        %>
+                                            <li class="boardlist" style="width:470px;"><a class="text-black font3 mb-n1" href="<%=path %>/board/view?boardNo=<%=b.getBoard_no() %>" style="display:inline-block;width:350px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis"><%=b.getBoard_title() %></a><span class="text-block" style="display:inline-block;float:right;padding-top:8px;margin-bottom:-20px;"><%=sdf.format(b.getBoard_mdf_date()) %></span></li>
+                                        <%
+                                        	}
+                                        } else {
+                                        %>
+                                            <li class="boardlist" style="width:470px;text-align:center;list-style:none;border:none;"><p class="text-black font3" style="margin-bottom:-10px;display:inline-block;width:300px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">조회된 게시글이 없습니다.</p><span class="text-block font3" style="float:right;"></span></li>
+                                        <%
+                                        } 
+                                        %>
+                                      	</ul>
                                     </div>
                                 </div>
                             </form>
@@ -360,30 +363,8 @@ List<Board> bList3 = null;
                 </div>
             </div>
     </section>
+    
+    
+    
     <!--  자유게시판, 쇼핑, 안전교육 유튜브 섹션 끝  -->
-    <script>
-    function ajaxTest1(boardCat) {
-        let xhr = new XMLHttpRequest();
-        
-        xhr.onreadystatechange = function() {
-            console.log('read' + xhr.readyState);
-            console.log('read' + xhr.status);
-
-            document.getElementById('boardList').innerHTML = 'status : ' + xhr.status + '<br>';
-
-            if (xhr.readyState == 4 && xhr.status == 200) { // 요청 전달 성공 = 4
-                let str = xhr.responseText; // 서버가 응답한 text
-                document.getElementById('boardList').innerHTML += str + '<br>';
-            }
-        }
-        var category = boardCat;
-       
-		url ='<%=path%>/getBoard?boardCat=category';
-        
-        xhr.open('get', url, true);
-
-        // 5. xhr send
-        xhr.send(); // 실제 데이터가 전달 되는 코드
-    }
-    </script>
 <%@include file="/views/common/footer.jsp" %>

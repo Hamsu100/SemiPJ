@@ -9,7 +9,7 @@ import java.sql.Statement;
 import java.util.Properties;
 
 public class JDBCTemplate {
-
+	// 접속할 주소, 아이디, 비밀번호
 	public static Connection getConnection() {
 		Connection connection = null;
 		Properties porp = new Properties();
@@ -26,7 +26,9 @@ public class JDBCTemplate {
 			String url = porp.getProperty("db.url");
 			String name = porp.getProperty("db.username");
 			String pw = porp.getProperty("db.password");
-			
+			System.out.println(url);
+			System.out.println(name);
+			System.out.println(pw);
 			connection = DriverManager.getConnection(url,name,pw);
 			connection.setAutoCommit(false);
 		} catch (Exception e) {
@@ -65,7 +67,8 @@ public class JDBCTemplate {
 			e.printStackTrace();
 		}
 	}
-	
+	// JDBC 관련해서 객체들이 몇개 있음
+	// sql 
 	public static void close(Statement statusment) {
 		try {
 			if(statusment != null && !statusment.isClosed()) {
@@ -84,5 +87,10 @@ public class JDBCTemplate {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+	}
+	
+	public static void main(String[] args) {
+		getConnection();
+		System.out.println("!!");
 	}
 }

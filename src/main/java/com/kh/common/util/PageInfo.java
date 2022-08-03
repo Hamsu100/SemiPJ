@@ -20,6 +20,12 @@ public class PageInfo {
 		this.listLimit = listLimit;
 	}
 	
+	@Override
+	public String toString() {
+		return "현재 페이지 : " + currentPage + ", 페이지 칸에 보여질 페이지의 수 : " + pageLimit + ", 전체 리스트의 수 : " + listCount
+				+ ", 한페이에 표시되는 리스트의 수 : " + listLimit;
+	}
+
 	/** 	
 	 * @return 전체 페이지 중 가장 마지막 페이지
 	 */

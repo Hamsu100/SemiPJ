@@ -45,26 +45,35 @@ public class BoardMainListServlet extends MyHttpServlet {
 			String searchValue = req.getParameter("searchValue");
 			if (searchValue != null && searchValue.length() > 0) {
 				String searchType = req.getParameter("searchType");
+				if(!searchType.equals("all")) {
 				searchMap.put(searchType, searchValue);
+				} else {
+					searchMap.put("title", searchValue);
+					searchMap.put("writer", searchValue);
+					searchMap.put("content", searchValue);
+				}
 			}
 			String boardCat = req.getParameter("boardCat");
 			if (boardCat != null && boardCat.length() > 0) {
 				if (!boardCat.equals("null")) {
 					searchMap.put("boardCat", boardCat);
+					
 				}
 			}
 			System.out.println("searchMap : " + searchMap);
 
 			page = Integer.parseInt(req.getParameter("page"));
+			
 		} catch (Exception e) {
 		}
 		boardCnt = bs.boardCnt(searchMap);
 		
 		pageInfo = new PageInfo(page, 10, boardCnt, 10);
 		bList = bs.searchBoard(pageInfo, searchMap);
-		req.setAttribute("catName", catName);
+		
 		req.setAttribute("bList", bList);
 		req.setAttribute("pageInfo", pageInfo);
+		req.setAttribute("catName", catName);
 		req.getRequestDispatcher("/views/board/list.jsp").forward(req, resp);
 	}
 

@@ -6,13 +6,12 @@
 String path = request.getContextPath();
 
 User loginUser = (User) session.getAttribute("loginUser");
-
 %>
 
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
 <meta charset="utf-8">
@@ -58,22 +57,22 @@ User loginUser = (User) session.getAttribute("loginUser");
 			class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
 			<div class="container-fluid">
 				<div class="d-flex align-items-center">
-					<a class="navbar-brand py-0" href="<%=path%>"><img class="logo"
-						src="resources/resources/images/logo5.png" alt="wave logo"></a>
+					<a class="navbar-brand py-0" href="<%=path%>/index"><img class="logo"
+						src="<%=path %>/resources/resources/images/logo5.png" alt="wave logo"></a>
 					<!-- 로고를 누르면 홈으로 -->
 				</div>
 				<div class="collapse navbar-collapse" id="navbarCollapse">
 					<ul class="navbar-nav ms-auto">
-						<li class="nav-item"><a class="nav-link" href="<%=path%>">HOME</a></li>
+						<li class="nav-item"><a class="nav-link" href="<%=path%>/index">HOME</a></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="beachDropdownMenuLink"
-							href="main.html" data-bs-toggle="dropdown" aria-haspopup="true"
+							href="" data-bs-toggle="dropdown" aria-haspopup="true"
 							aria-expanded="false"> BEACH</a>
 							<div class="dropdown-menu dropdown-menu-end"
 								aria-labelledby="beachDropdownMenuLink">
-								<a class="dropdown-item" href="bsearch.html">- 해수욕장 검색하기 </a> <a
-									class="dropdown-item" href="bpop.html">- 인기지역 </a> <a
-									class="dropdown-item" href="falist1.html">- 주변시설 찾아보기 </a>
+								<a class="dropdown-item" href="<%=path%>/beach/search">- 해수욕장 검색하기 </a> <a
+									class="dropdown-item" href="">- 인기지역 </a> <a
+									class="dropdown-item" href="">- 주변시설 찾아보기 </a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="maketDropdownMenuLink"
@@ -82,8 +81,8 @@ User loginUser = (User) session.getAttribute("loginUser");
 							<div class="dropdown-menu dropdown-menu-end"
 								aria-labelledby="maketDropdownMenuLink">
 								<h6 class="dropdown-header fw-normal">당신이 찾는 그 모든 것</h6>
-								<a class="dropdown-item" href="market.html">- 마켓 모아보기 </a> <a
-									class="dropdown-item" href="shop.html">- 용품샵 </a>
+								<a class="dropdown-item" href="">- 마켓 모아보기 </a> <a
+									class="dropdown-item" href="">- 용품샵 </a>
 							</div></li>
 						<li class="nav-item dropdown"><a
 							class="nav-link dropdown-toggle" id="boardDropdownMenuLink"

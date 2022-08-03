@@ -39,7 +39,7 @@ public class UserService {
 	//
 	public int join(User user) {
 		int result = dao.insertUser(user, conn);
-
+		// result >0 삽입 성공 오류 업이 삽입 성공/ 0> 삽입 실패
 		if (result > 0) {
 			commit(conn);
 		} else {

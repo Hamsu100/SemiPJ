@@ -32,16 +32,15 @@ public class BoardDeleteServlet extends MyHttpServlet {
 
 			int result = bs.deleteBoard(b);
 
-			if (result <= 0) {
-				sendCommonPage("삭제 안됬어!", "/board", req, resp);
-				return;
+			if (result > 0) {
+				sendCommonPage("게시글 삭제에 성공하였습니다.", "/board/list", req, resp);
+			}else {
+				sendCommonPage("게시글 삭제에 실패하였습니다", "/board/list?boardNo="+boardNo, req, resp);
 			}
-			deleteFile(b.getBoard_renameimg());
-			sendCommonPage("삭제 완", "/board", req, resp);
 
 		} catch (Exception e) {
 			e.printStackTrace();
-			sendCommonPage("잘못된 접근", "/board", req, resp);
+			sendCommonPage("DB 오류", "/board", req, resp);
 		}
 	}
 }

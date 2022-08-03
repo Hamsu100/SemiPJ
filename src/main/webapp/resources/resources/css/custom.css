@@ -418,8 +418,6 @@
 }
 
 .box {
-    border: 2px solid;
-    border-color: gray;
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
     padding-left: 1.5rem;
@@ -452,8 +450,101 @@
         min-height: 450px;
     }
 }
+
+.disp-block {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    float: none;
+    margin: 0 auto
+}
+
+.btn-wishlist {
+    display: inline-block;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    background-color: #fff;
+    color: #787a80;
+    transition: background-color .3s, color .3s;
+    text-decoration: none;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 50%
+}
+
+.height-1 {
+    height: 210px;
+}
+
 .boardlist {
-    list-style-type: square;
+    list-style: square;
     border-bottom: 0.5px dotted;
     border-color: gray;
+}
+
+.shoplist {
+    border-bottom: 0.5px solid;
+    border-color: gray;
+}
+
+.nameOfBeach {
+    text-align: center;
+}
+
+.simpleExplanation {
+    text-decoration-line: underline;
+    text-decoration-style: wavy;
+    text-decoration-color: #5DA5B6;
+    text-align: center;
+}
+
+.accordion-item .accordion-color {
+    color: #5DA5B6;
+}
+
+.board-btn {
+    width: 80px;
+}
+
+.offset-9-1 {
+    margin-left: 80%;
+}
+
+.offset-9-2 {
+    margin-left: 61.5%;
+}
+
+.col-lg-6-1 {
+    flex: 0 0 auto;
+    width: 52%;
+}
+
+.offset-11-1 {
+    margin-left: 93.33%;
+}
+
+.offset-9-3 {
+    margin-left: 87.5%;
+}
+
+.btnrow {
+    display: inline-block;
+}
+
+.offset-10-1 {
+    margin-left: 78%;
+}
+
+.boarda {
+    font-size: 0.9rem;
+}
+
+.offset-7-1 {
+    margin-left: 65.33%;
+}
+
+.offset-10-2 {
+    margin-left: 87.5%;
 }

@@ -32,9 +32,7 @@ public class BoardViewServlet extends MyHttpServlet {
 			resp.sendRedirect(req.getContextPath() + "/");
 			return;
 		}
-		
 		req.setAttribute("board", board);
-		req.setAttribute("boardCat", req.getParameter("boardCat"));
 		req.getRequestDispatcher("/views/board/view.jsp").forward(req, resp);
 	}
 }

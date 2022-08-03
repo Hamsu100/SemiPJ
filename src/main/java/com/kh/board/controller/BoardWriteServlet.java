@@ -9,11 +9,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kh.board.model.service.BoardService;
 import com.kh.board.model.vo.Board;
-import com.kh.common.util.MyFileRenamePolicy;
 import com.kh.common.util.MyHttpServlet;
 import com.kh.locationdata.model.service.LocationService;
 import com.kh.member.model.vo.User;
-import com.oreilly.servlet.MultipartRequest;
 
 @WebServlet("/board/write")
 public class BoardWriteServlet extends MyHttpServlet {
@@ -32,8 +30,7 @@ public class BoardWriteServlet extends MyHttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			User loginUser = getSessionUser(req);
-			System.out.println(req.getParameter("boardCat"));
-
+			System.out.println("boardCat" + req.getParameter("boardCat"));
 
 			if (loginUser != null) {
 				req.getRequestDispatcher("/views/board/write.jsp").forward(req, resp);
@@ -48,55 +45,37 @@ public class BoardWriteServlet extends MyHttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 
-			String path = getServletContext().getRealPath("resources/upload/board");
-
-			int maxSize = 104867800;
-
-			String encoding = "utf-8";
-
-			MultipartRequest mr = new MultipartRequest(req, path, maxSize, encoding, new MyFileRenamePolicy());
+			String boardCat = req.getParameter("boardCat");
+			String title = req.getParameter("title");
+			String content = req.getParameter("content");
+			String writer = req.getParameter("writer");
+			String prevBoCat = req.getParameter("prevBoCat");
 
 			User loginUser = getSessionUser(req);
 
-			if (loginUser == null || loginUser.getUser_id().equals(mr.getParameter("writer")) == false) {
-				sendCommonPage("로그인 유저 뭔가 이상함.", "/board", req, resp);
+			if (loginUser == null || loginUser.getUser_id().equals(writer) == false) {
+				sendCommonPage("비정상적인 접근입니다.", "/board/list", req, resp);
 				return;
 			}
-			int boardCatNo = 0;
-			String boardCat = mr.getParameter("boardCat");
-			if (!boardCat.equals("null") && boardCat.length() > 0) {
-				boardCatNo = Integer.parseInt(boardCat);
-			}
-
-			String locType = mr.getParameter("locType");
-
-			int locNo = 0;
 			
-			if (locType != null && locType.length() > 0) {
-				locNo = ls.getLocNo(locType);
-			}
-
 			Board b = new Board();
-			b.setBoard_title(mr.getParameter("tilte"));
-			b.setBoard_category(boardCatNo);
-			b.setBoard_content(mr.getParameter("content"));
-			b.setLocation_no(locNo);
+			b.setBoard_title(title);
+			b.setBoard_category(Integer.parseInt(boardCat));
+			b.setBoard_content(content);
 			b.setUser_no(loginUser.getUser_no());
-			b.setBoard_originimg(mr.getOriginalFileName("upFile"));
-			b.setBoard_renameimg(mr.getFilesystemName("upFile"));
-			b.setBoard_writer(loginUser.getUser_id());
 
 			int result = bs.writeBoard(b);
 
 			if (result > 0) {
-				sendCommonPage("등록", "/board?boardCat="+b.getBoard_category(), req, resp);
+				sendCommonPage("등록", "/board/list?boardCat=" + b.getBoard_category(), req, resp);
 			} else {
-				sendCommonPage("?", "/board", req, resp);
+				sendCommonPage("DB 삽입 오류", "/board/list?boardCat="+prevBoCat, req, resp);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			sendCommonPage("오류", "/board", req, resp);
+			sendCommonPage("오류", "/board/list", req, resp);
 		}
 
 	}
+
 }

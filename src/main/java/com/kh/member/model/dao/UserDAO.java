@@ -17,7 +17,7 @@ public class UserDAO {
 		String sql = "insert into tbl_user values(SEQ_USER_NO.nextval, ?, ?, ?, ?, default, default, default)";
 
 		PreparedStatement pstmt = null;
-
+		
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, user.getUser_id());

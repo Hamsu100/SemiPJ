@@ -12,7 +12,6 @@ public class Board {
 	private Date board_crt_date;
 	private Date board_mdf_date;
 	private String board_status;
-	private int location_no;
 	private int user_no;
 	private String board_originimg;
 	private String board_renameimg;
@@ -23,41 +22,38 @@ public class Board {
 		super();
 	}
 
-	public Board(int board_no, String board_title, int board_category, String board_content, Date board_crt_date,
-			Date board_mdf_date, String board_status, int area_code, int user_no, String board_originimg,
-			String board_renameimg, String board_writer, List<Reply> board_reply) {
-		super();
-		this.board_no = board_no;
-		this.board_title = board_title;
-		this.board_content = board_content;
-		this.board_crt_date = board_crt_date;
-		this.board_mdf_date = board_mdf_date;
-		this.board_status = board_status;
-		this.location_no = area_code;
-		this.user_no = user_no;
-		this.board_originimg = board_originimg;
-		this.board_renameimg = board_renameimg;
-		this.board_writer = board_writer;
-		this.board_reply = board_reply;
-		this.board_category = board_category;
-	}
+
 
 	@Override
 	public String toString() {
 		return "Board [board_no=" + board_no + ", board_title=" + board_title + ", board_category=" + board_category
 				+ ", board_content=" + board_content + ", board_crt_date=" + board_crt_date + ", board_mdf_date="
-				+ board_mdf_date + ", board_status=" + board_status + ", location_no=" + location_no + ", user_no="
-				+ user_no + ", board_originimg=" + board_originimg + ", board_renameimg=" + board_renameimg
-				+ ", board_writer=" + board_writer + ", board_reply=" + board_reply + "]";
+				+ board_mdf_date + ", board_status=" + board_status + ", user_no=" + user_no + ", board_originimg="
+				+ board_originimg + ", board_renameimg=" + board_renameimg + ", board_writer=" + board_writer
+				+ ", board_reply=" + board_reply + "]";
 	}
 
-	public int getLocation_no() {
-		return location_no;
+
+
+	public Board(int board_no, String board_title, int board_category, String board_content, Date board_crt_date,
+			Date board_mdf_date, String board_status, int user_no, String board_originimg, String board_renameimg,
+			String board_writer, List<Reply> board_reply) {
+		super();
+		this.board_no = board_no;
+		this.board_title = board_title;
+		this.board_category = board_category;
+		this.board_content = board_content;
+		this.board_crt_date = board_crt_date;
+		this.board_mdf_date = board_mdf_date;
+		this.board_status = board_status;
+		this.user_no = user_no;
+		this.board_originimg = board_originimg;
+		this.board_renameimg = board_renameimg;
+		this.board_writer = board_writer;
+		this.board_reply = board_reply;
 	}
 
-	public void setLocation_no(int location_no) {
-		this.location_no = location_no;
-	}
+
 
 	public int getBoard_category() {
 		return board_category;

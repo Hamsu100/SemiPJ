@@ -69,7 +69,7 @@ String path = request.getContextPath();
                             <button class="btn btn-lg btn-primary" type="submit">Sign up</button>
                         </div>
                     </form>
-                    <a class="close-absolute me-md-5 me-xl-6 pt-5" href="<%=path%>">
+                    <a class="close-absolute me-md-5 me-xl-6 pt-5" href="<%=path%>/index">
                         <svg class="svg-icon w-3rem h-3rem">
                 <use xlink:href="#close-1"> </use>
               </svg></a>

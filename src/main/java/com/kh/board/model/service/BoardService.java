@@ -128,4 +128,9 @@ public class BoardService {
 
 		return b;
 	}
+	
+	// 10. 리플 소환
+	public Reply searchReply(int rNo) {
+		return dao.searchReplyByRNo(conn, rNo);
+	}
 }

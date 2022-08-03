@@ -27,7 +27,7 @@ public class UserEnrollServlet extends MyHttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		resp.sendRedirect(req.getContextPath() + "/views/user/signup.jsp");
 	}
-
+// get , post
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
@@ -48,7 +48,7 @@ public class UserEnrollServlet extends MyHttpServlet {
 			int result = us.join(u);
 
 			if (result > 0) {
-				sendCommonPage("회원 가입에 성공 하셨습니다.", "/", req, resp);
+				sendCommonPage("회원 가입에 성공 하셨습니다.", "/index", req, resp);
 			} else {
 				sendCommonPage("회원 가입에 실패했습니다. DB 오류", "/views/user/signup.jsp", req, resp);
 			}

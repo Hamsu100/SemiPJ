@@ -30,9 +30,9 @@ public class BoardReplyServlet extends MyHttpServlet {
 
 			User loginUser = getSessionUser(req);
 
-			String replyWriter = req.getParameter("replyWriter");
+			String replyWriter = req.getParameter("writer");
 			int boardNo = Integer.parseInt(req.getParameter("bNo"));
-			String content = req.getParameter("replyContent");
+			String content = req.getParameter("review");
 
 			if (loginUser.getUser_id().equals(replyWriter) == false) {
 				sendCommonPage("세션이 만료 되었습니다.", "/board", req, resp);
@@ -48,7 +48,7 @@ public class BoardReplyServlet extends MyHttpServlet {
 			int result = bs.writeReply(reply);
 
 			if (result > 0) {
-				sendCommonPage("리플 달았슈", "/board/view?boardNo=" + boardNo, req, resp);
+				sendCommonPage("댓글 달기에 성공하였습니다!", "/board/view?boardNo=" + boardNo, req, resp);
 			} else {
 				sendCommonPage("리플 실패 ㅜ", "/board/view?boardNo=" + boardNo, req, resp);
 			}
