@@ -12,8 +12,8 @@ import com.kh.beach.model.vo.BchReply;
 import com.kh.common.util.MyHttpServlet;
 import com.kh.member.model.vo.User;
 
-@WebServlet("/beach/revwrite")
-public class BeachReviewServlet extends MyHttpServlet{
+@WebServlet("/beach/revupdate")
+public class BeachRevUpdateServlet extends MyHttpServlet{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -21,15 +21,15 @@ public class BeachReviewServlet extends MyHttpServlet{
 
 	@Override
 	public String getServletName() {
-		return "BeachReviewServlet";
+		return "BeachRevUpdateServlet";
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String writer=req.getParameter("writer");
-		String comment = req.getParameter("review");
-		String beachCode = req.getParameter("beachCode");
-		
+		String rNo = req.getParameter("rNo");
+		String writer = req.getParameter("writer");
+		String content = req.getParameter("modifycomment");
+		String beachCode =req.getParameter("beachCode");
 		
 		User loginUser = getSessionUser(req);
 		
@@ -37,18 +37,17 @@ public class BeachReviewServlet extends MyHttpServlet{
 			sendCommonPage("세션이 만료되었습니다.", "/beach/view?beachCode="+beachCode, req, resp);
 			return;
 		}
-		BchReply r = new BchReply();
+		BchReply r = bs.searchReview(rNo);
 		
-		r.setBEACH_CODE(beachCode);
-		r.setUSER_NO(loginUser.getUser_no()+"");
-		r.setBCH_REVIEW_CONTENT(comment);
-		int result = bs.writeReview(r);
+		r.setBCH_REVIEW_CONTENT(content);
+		int result = bs.modifyReview(r);
 		
-		if (result > 0 ) {
-			sendCommonPage("댓글작성에 성공하셨습니다", "/beach/view?beachCode="+beachCode, req, resp);
-		} else {
-			sendCommonPage("댓글작성에 실패하셨습니다.", "/beach/view?beachCode="+beachCode, req, resp);
+		if (result >0) {
+			sendCommonPage("리뷰를 수정하였습니다.", "/beach/view?beachCode="+beachCode, req, resp);
+		}else {
+			sendCommonPage("리뷰 수정에 실패하였습니다.", "/beach/view?beachCode="+beachCode, req, resp);
 		}
+		
 	}
 	
 }

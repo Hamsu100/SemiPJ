@@ -30,8 +30,8 @@ public class BeachDAO {
 	public List<Beach> getPopBch(Connection conn, String locName) { // 필요한 정보
 		List<Beach> bList = new ArrayList<>();
 		String sql = "select * from " + "(select b.beach_code, b.beach_name, " + "b.beach_content, "
-				+ "b.beach_address, l.location_name, b.beach_img, " + "rank() over(order by b.beach_favor_cnt) rank "
-				+ "from beach b, area a, location l " + "where b.area_code=a.area_code "
+				+ "b.beach_address, l.location_name, b.beach_img, b.BEACH_FAVOR_CNT, rank() over(order by b.BEACH_FAVOR_CNT desc) rank "
+				+ "from beach b, area a, location l " + "where b.area_code = a.area_code "
 				+ "and a.location_no = l.location_no ";
 		if (locName.equals("전국") == false) {
 			sql += "and l.location_name = ? ";
@@ -55,6 +55,7 @@ public class BeachDAO {
 				b.setBEACH_ADDRESS(rs.getString("beach_address"));
 				b.setBEACH_CONTENT(rs.getString("beach_content"));
 				b.setBEACH_IMG(rs.getString("beach_img"));
+				b.setBEACH_FAVOR_CNT(rs.getString("BEACH_FAVOR_CNT"));
 
 				bList.add(b);
 			}
@@ -338,6 +339,38 @@ public class BeachDAO {
 		return result;
 	}
 
+	public BchReply searchReply(Connection conn, String rNo) {
+		BchReply r = new BchReply();
+
+		String sql = "select * from bch_review where BCH_REVIEW_STATUS = 'Y' and BCH_REVIEW_NO = ?";
+
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, rNo);
+			rs = pstmt.executeQuery();
+			
+			if (rs.next()) {
+				r.setBCH_REVIEW_CONTENT(rs.getString("BCH_REVIEW_CONTENT"));
+				r.setBCH_REVIEW_CRT_DATE(rs.getDate("BCH_REVIEW_CRT_DATE"));
+				r.setBCH_REVIEW_MDF_DATE(rs.getDate("BCH_REVIEW_MDF_DATE"));
+				r.setBCH_REVIEW_NO(rs.getString("BCH_REVIEW_NO"));
+				r.setBCH_REVIEW_STATUS(rs.getString("BCH_REVIEW_STATUS"));
+				r.setBEACH_CODE(rs.getString("BEACH_CODE"));
+				r.setUSER_NO(rs.getString("USER_NO"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			close(pstmt);
+			close(rs);
+		}
+
+		return r;
+	}
+
 	public int addFavor(Connection conn, String beachCode, String userNo) {
 		int result = 0;
 		String sql = "insert into BCH_FAVORITE values (?, ?)";
@@ -362,7 +395,7 @@ public class BeachDAO {
 
 	public int addFavorCnt(Connection conn, Beach b, int addCnt) {
 		int result = 0;
-		String sql = "update beach set BEACH_FAVOR_CNT where BEACH_CODE = ?";
+		String sql = "update beach set BEACH_FAVOR_CNT = ? where BEACH_CODE = ?";
 
 		PreparedStatement pstmt = null;
 
@@ -394,10 +427,10 @@ public class BeachDAO {
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, userNo);
-			
+
 			rs = pstmt.executeQuery();
-			
-			while(rs.next()) {
+
+			while (rs.next()) {
 				list.add(rs.getString("BEACH_CODE"));
 			}
 		} catch (Exception e) {

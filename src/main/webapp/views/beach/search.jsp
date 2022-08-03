@@ -49,44 +49,44 @@ List<Beach> bList = (List<Beach>)request.getAttribute("bList");
             <%--나중에 데이터 들어오면 해봄 --%>
             <div class="row">
                 <div class="d-flex align-items-lg-stretch mb-4 col-lg-8">
-                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(resources/resources/images/back1.jpg) no-repeat; background-size: cover;">
-                        <a class="tile-link" href="bde.html"> </a>
+                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=bList.get(0).getBEACH_IMG().split(",")[0] %>) no-repeat; background-size: cover;">
+                        <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bList.get(0).getBEACH_CODE()%>"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">해운대 해수욕장</h3>
+                            <h3 class="text-shadow text-uppercase mb-0"><%=bList.get(0).getBEACH_NAME() %></h3>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(resources/resources/images/3.png) no-repeat; background-size: cover;">
-                        <a class="tile-link" href="bde.html"> </a>
+                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=bList.get(1).getBEACH_IMG().split(",")[0] %>) no-repeat; background-size: cover;">
+                        <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bList.get(1).getBEACH_CODE()%>"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">을왕리 해수욕장</h3>
+                            <h3 class="text-shadow text-uppercase mb-0"><%=bList.get(1).getBEACH_NAME() %></h3>
                         </div>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(resources/resources/images/back2.jpg) no-repeat; background-size: cover;">
-                        <a class="tile-link" href="bde.html"> </a>
+                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=bList.get(2).getBEACH_IMG().split(",")[0] %>) no-repeat; background-size: cover;">
+                        <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bList.get(2).getBEACH_CODE()%>"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">대천 해수욕장</h3>
+                            <h3 class="text-shadow text-uppercase mb-0"><%=bList.get(2).getBEACH_NAME() %></h3>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(resources/resources/images/back3.jpg) no-repeat; background-size: cover;">
-                        <a class="tile-link" href="bde.html"> </a>
+                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=bList.get(3).getBEACH_IMG().split(",")[0] %>) no-repeat; background-size: cover;">
+                        <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bList.get(3).getBEACH_CODE()%>"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">경포 해변</h3>
+                            <h3 class="text-shadow text-uppercase mb-0"><%=bList.get(3).getBEACH_NAME() %></h3>
                         </div>
                     </div>
                 </div>
                 <div class="d-flex align-items-lg-stretch mb-4 col-lg-4">
-                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(resources/resources/images/2.png) no-repeat; background-size: cover;">
-                        <a class="tile-link" href="bde.html"> </a>
+                    <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=bList.get(4).getBEACH_IMG().split(",")[0] %>) no-repeat; background-size: cover;">
+                        <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bList.get(4).getBEACH_CODE()%>"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">강동몽돌해변 </h3>
+                            <h3 class="text-shadow text-uppercase mb-0"><%=bList.get(4).getBEACH_NAME() %> </h3>
                         </div>
                     </div>
                 </div>

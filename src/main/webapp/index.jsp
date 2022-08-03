@@ -135,7 +135,7 @@ List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
                   	%>
                     <div class="swiper-slide h-auto px-2">
                         <div class="card card-poster gradient-overlay hover-animate mb-4 mb-lg-0">
-                            <a class="tile-link" href="bpop.html"></a><img class="bg-image" src="<%=pbList.get(i).getBEACH_IMG() != null? pbList.get(i).getBEACH_IMG().split(",")[0]:"" %>" alt="Card image">
+                            <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=pbList.get(i).getBEACH_CODE()%>"></a><img class="bg-image" src="<%=pbList.get(i).getBEACH_IMG() != null? pbList.get(i).getBEACH_IMG().split(",")[0]:"" %>" alt="Card image">
                             <div class="card-body-center overlay-content">
                                 <h5 class="card-title text-shadow text-uppercase"><%=pbList.get(i).getBEACH_NAME() %></h5>
                             </div>

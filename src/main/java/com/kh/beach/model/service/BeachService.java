@@ -67,6 +67,10 @@ public class BeachService {
 		return result;
 	}
 
+	public BchReply searchReview(String rNo) {
+		return dao.searchReply(conn, rNo);
+	}
+
 	public int delReview(BchReply r) {
 		int result = dao.deleteBchReply(conn, r);
 		if (result > 0) {
@@ -77,9 +81,10 @@ public class BeachService {
 		return result;
 	}
 
-	public int addFavor(String bchCode, String userNo) {
+	public int addFavor(String bchCode, Beach b, String userNo) {
 		int result = dao.addFavor(conn, bchCode, userNo);
-		if (result > 0) {
+		int result2 = dao.addFavorCnt(conn, b, 1);
+		if (result > 0 && result2 > 0) {
 			commit(conn);
 		} else {
 			rollback(conn);
@@ -87,19 +92,10 @@ public class BeachService {
 		return result;
 	}
 
-	public int addFavorCnt(Beach b, int addCnt) {
-		int result = dao.addFavorCnt(conn, b, addCnt);
-		if (result > 0) {
-			commit(conn);
-		} else {
-			rollback(conn);
-		}
-		return result;
-	}
-
-	public int delFavor(String bchCode, String userNo) {
+	public int delFavor(String bchCode, Beach b, String userNo) {
 		int result = dao.delFavor(conn, bchCode, userNo);
-		if (result > 0) {
+		int result2 = dao.addFavorCnt(conn, b, 1);
+		if (result > 0 && result2 > 0) {
 			commit(conn);
 		} else {
 			rollback(conn);

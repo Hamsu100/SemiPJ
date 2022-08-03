@@ -18,7 +18,7 @@ public class BeachIndex {
 	public String beachIndex(String beachCode) {
 		String serviceKey = "aBjuqY5dVG2CQPH/pvV5w==";
 
-		String r = "";
+		String r = "-";
 
 		try {
 			String url = "http://www.khoa.go.kr/api/oceangrid/beach/search.do?ServiceKey="
@@ -46,10 +46,5 @@ public class BeachIndex {
 			e.printStackTrace();
 		}
 		return r;
-	}
-
-	public static void main(String[] args) {
-
-		System.out.println("BCHCODE : "+new BeachIndex().beachIndex("BCH089"));
 	}
 }

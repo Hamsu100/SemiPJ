@@ -17,7 +17,6 @@ import com.kh.member.model.vo.User;
 public class BoardWriteServlet extends MyHttpServlet {
 
 	private BoardService bs = new BoardService();
-	private LocationService ls = new LocationService();
 
 	private static final long serialVersionUID = 1L;
 

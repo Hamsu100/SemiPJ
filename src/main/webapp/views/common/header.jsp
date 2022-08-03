@@ -71,7 +71,7 @@ User loginUser = (User) session.getAttribute("loginUser");
 							<div class="dropdown-menu dropdown-menu-end"
 								aria-labelledby="beachDropdownMenuLink">
 								<a class="dropdown-item" href="<%=path%>/beach/search">- 해수욕장 검색하기 </a> <a
-									class="dropdown-item" href="">- 인기지역 </a> <a
+									class="dropdown-item" href="<%=path%>/beach/pop">- 인기지역 </a> <a
 									class="dropdown-item" href="">- 주변시설 찾아보기 </a>
 							</div></li>
 						<li class="nav-item dropdown"><a

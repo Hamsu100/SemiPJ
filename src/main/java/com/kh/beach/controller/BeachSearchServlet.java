@@ -25,7 +25,7 @@ public class BeachSearchServlet extends MyHttpServlet{
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		List<Beach> bList = bs.getPopBchList("전체");
+		List<Beach> bList = bs.getPopBchList("전국");
 		
 		req.setAttribute("bList", bList);
 		
