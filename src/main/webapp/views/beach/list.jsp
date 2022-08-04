@@ -122,7 +122,7 @@ List<String> favorList = (List<String>)request.getAttribute("favorList");
                     <!-- venue item-->
                     <div class="col-sm-6 mb-5 hover-animate" data-marker-id="59c0c8e3a31e62979bf147c9">
                         <div class="card h-100 border-0 shadow">
-                            <div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(<%=bch.getBEACH_IMG().split(",")[0] %>); min-height: 200px;">
+                            <div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(<%=bch.getBEACH_IMG().split(",")[0].length() ==0? bchNoImg : bch.getBEACH_IMG().split(",")[0] %>); min-height: 200px;">
                                 <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bch.getBEACH_CODE()%>"></a>
                                 <div class="card-img-overlay-bottom z-index-20">
                                     <h4 class="text-white text-shadow "><%=bch.getBEACH_NAME() %></h4>

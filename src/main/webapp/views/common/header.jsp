@@ -4,7 +4,7 @@
 
 <%
 String path = request.getContextPath();
-
+String bchNoImg ="https://cdn.imweb.me/thumbnail/20210712/61009d196445a.jpg";
 User loginUser = (User) session.getAttribute("loginUser");
 %>
 

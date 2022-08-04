@@ -548,3 +548,8 @@
 .offset-10-2 {
     margin-left: 87.5%;
 }
+
+.col-lg-2-1 {
+    flex: 0 0 auto;
+    width: 24.5%;
+}

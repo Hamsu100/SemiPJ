@@ -1,6 +1,5 @@
 package com.kh.member.model.vo;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class User {
@@ -15,7 +14,6 @@ public class User {
 	private Date user_mdf_date;
 	public User() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 	public User(int user_no, String user_id, String user_pw, String user_name, String user_phone, String user_email,
 			String user_status, Date user_crt_date, Date user_mdf_date) {

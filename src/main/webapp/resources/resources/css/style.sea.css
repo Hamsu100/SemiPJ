@@ -17186,3 +17186,8 @@ STYLE SWITCHER FOR DEMO
 #style-switch .h4 {
     color: #495057;
 }
+
+.col-lg-2-3 {
+    flex: 0 0 auto;
+    width: 24.5%;
+}
