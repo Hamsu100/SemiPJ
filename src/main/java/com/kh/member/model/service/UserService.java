@@ -61,4 +61,6 @@ public class UserService {
 	public void closeConn() {
 		close(conn);
 	}
+	
+	// 유저정보 불러오는 메소드
 }

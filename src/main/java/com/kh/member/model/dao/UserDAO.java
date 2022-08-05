@@ -71,4 +71,9 @@ public class UserDAO {
 
 		return null;
 	}
+	
+	// 메소드 추가
+	// 1. 유저 정보 불러오는 메소드
+	
+	
 }
