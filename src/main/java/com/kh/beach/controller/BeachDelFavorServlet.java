@@ -37,9 +37,9 @@ public class BeachDelFavorServlet extends MyHttpServlet {
 		int result = bs.delFavor(beachCode,b, loginUser.getUser_no() + "");
 
 		if (result > 0) {
-			sendCommonPage("즐겨 찾기에 추가 되었습니다.", "/beach/view?beachCode=" + beachCode, req, resp);
+			sendCommonPage("즐겨 찾기를 삭제 하였습니다.", "/beach/view?beachCode=" + beachCode, req, resp);
 		} else {
-			sendCommonPage("즐겨 찾기 추가에 실패하였습니다.", "/beach/view?beachCode=" + beachCode, req, resp);
+			sendCommonPage("즐겨 찾기 삭제에 실패하였습니다.", "/beach/view?beachCode=" + beachCode, req, resp);
 		}
 	}
 }

@@ -553,3 +553,11 @@
     flex: 0 0 auto;
     width: 24.5%;
 }
+
+.offset-1-1 {
+    margin-left: 15%;
+}
+
+.me-7-1 {
+    margin-right: 16rem !important;
+}

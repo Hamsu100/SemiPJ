@@ -86,15 +86,15 @@
                     <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
                         <h6 class="text-uppercase text-theme mb-3">Beach & MARKET</h6>
                         <ul class="list-unstyled">
-                            <li><a class="text-muted" href="bsearch.html">Search</a></li>
-                            <li><a class="text-muted" href="bpop.html">Popularity</a></li>
+                            <li><a class="text-muted" href="<%=path%>/beach/search">Search</a></li>
+                            <li><a class="text-muted" href="<%=path%>/beach/pop">Popularity</a></li>
                             <li><a class="text-muted" href="shop.html">Goods shop </a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">
                         <h6 class="text-uppercase text-theme mb-3">Community</h6>
                         <ul class="list-unstyled">
-                            <li><a class="text-muted" href="board.html">All Board</a></li>
+                            <li><a class="text-muted" href="<%=path%>/board/list">All Board</a></li>
                             <li><a class="text-muted" href="otherblog.html">Other Blog</a></li>
                             <li><a class="text-muted" href="myblog">My Blog</a></li>
                         </ul>

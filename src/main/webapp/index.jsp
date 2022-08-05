@@ -19,7 +19,7 @@ List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
 <script>
 
 	function dateParsing(date){
-		str = date.substring(7,11)+'.'+date.substring(0,date.indexOf('월'))+'.'+date.substring(3,5);
+		str = date.substring(date.indexOf(',')+1,date.length)+'.'+date.substring(0,date.indexOf('월'))+'.'+date.substring(date.indexOf('월')+2,date.indexOf(','));
         return str;
 	}
 	
@@ -39,8 +39,6 @@ List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
                 		+			    '<ul>' ;
                 	if(list!=''){
 	                	$.each(list, (i, obj) => {
-	                		for(v in obj){console.log(v)}
-	                		
 	                		str += 	'<li class="boardlist" style="width:470px;"><a class="text-black font3 mb-n1" '
 		                		+	'href="<%=path%>/board/view?boardNo='+obj.board_no+'" style="display:inline-block;'
 		                		+	'width:350px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">'

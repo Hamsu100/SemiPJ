@@ -94,7 +94,7 @@ public class BeachService {
 
 	public int delFavor(String bchCode, Beach b, String userNo) {
 		int result = dao.delFavor(conn, bchCode, userNo);
-		int result2 = dao.addFavorCnt(conn, b, 1);
+		int result2 = dao.addFavorCnt(conn, b, -1);
 		if (result > 0 && result2 > 0) {
 			commit(conn);
 		} else {

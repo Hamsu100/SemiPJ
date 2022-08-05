@@ -49,11 +49,11 @@ function checkLogin(){
 
 
 
-    <section class="py-6">
-        <div class="container-fluid">
-            <div class="row px-xl-5">
-                <div class="col-lg-2" style="margin-right:50px">
-                    <div class="sticky-top mb-5" style="top: 120px;">
+    <section class="py-4">
+        <div class="container">
+            <div class="row col-lg-12">
+                <div class="col-lg-2">
+                    <div class="sticky-top mb-5">
                         <div class="sidebar-block">
                             <h6 class="sidebar-heading ms-3">게시판 항목</h6>
                             <nav class="nav nav-pills flex-column">
@@ -74,13 +74,13 @@ function checkLogin(){
                     </div>
                 </div>
                 
-                <div class="col-lg-10 col-xl-9">
+                <div class="col-lg-10">
 					
                     <form action="#" method="get">
                     	<input type="hidden" name="boardCat" value="<%=boardCat%>">
-                        <div class="row" justify-content-center>
+                        <div class="row mb-4" justify-content-center>
 
-                            <div class="col-xl-2 col-md-6 mb-4">
+                            <div class="col-lg-2">
 
                                 <select class="selectpicker form-control" name="searchType" id="search">
                                     <option value="title" selected>제목</option>
@@ -89,7 +89,7 @@ function checkLogin(){
                                 </select>
                             </div>
 
-                            <div class="col-xl-6 col-md-6 mb-4">
+                            <div class="col-lg-9">
 
                                 <div class="input-label-absolute input-label-absolute-right">
                                     <div class="label-absolute"><i class="fa fa-search"></i></div>
@@ -97,15 +97,12 @@ function checkLogin(){
                                 </div>
                             </div>
 
-                            <div class="col-xl-3 col-md-6 mb-4">
+                            <div class="col-lg-1">
 
                                 <button class="btn btn-outline-primary" onclick="location.href='<%=path %>/board/list';" type="submit">검색</button>
                             </div>
 
-                            <div class="col-xl-1 col-md-6 mb-4">
-
-                                <button class="btn btn-info" onclick="location.href='<%=path %>/board/write?boardCat=<%=boardCat %>';" type="button">글쓰기</button>
-                            </div>
+                            
 
 
                         </div>
@@ -130,7 +127,7 @@ function checkLogin(){
                                 <tr>
                                     <td><%=b.getBoard_no() %></td>
                                     <td><%=catName[b.getBoard_category()-1] %></td>
-                                    <td><a style="text-decoration:none;color:black;" href="<%=path%>/board/view?boardNo=<%=b.getBoard_no() %>&boardCat=<%=boardCat%>"><%=b.getBoard_title() %></a></td>
+                                    <td ><a style="text-decoration:none;width:600px;color:black;display:inline-block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" href="<%=path%>/board/view?boardNo=<%=b.getBoard_no() %>&boardCat=<%=boardCat%>"><%=b.getBoard_title() %></a></td>
                                     <td>
                                     <%=b.getBoard_writer().substring(0, b.getBoard_writer().indexOf("@")) %>
                                     </td>
@@ -153,6 +150,7 @@ function checkLogin(){
                         </table>
 
                         <nav aria-label="Page navigation example">
+							<button class="btn btn-primary offset-11 text-white" onclick="location.href='<%=path %>/board/write?boardCat=<%=boardCat %>';" type="button">글쓰기</button>
                             <ul class="pagination pagination-template d-flex justify-content-center">
                                 <li class="page-item">
                                 <%
@@ -195,7 +193,9 @@ function checkLogin(){
             </div>
         </div>
     </section>
-    
+    <div class="col-xl-1 col-md-6 mb-4">
+
+                            </div>
 
 <script>
 

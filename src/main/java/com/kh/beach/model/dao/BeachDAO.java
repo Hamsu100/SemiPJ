@@ -59,7 +59,6 @@ public class BeachDAO {
 
 				bList.add(b);
 			}
-
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -401,7 +400,7 @@ public class BeachDAO {
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-
+			System.out.println(b.getBEACH_FAVOR_CNT());
 			pstmt.setInt(1, Integer.parseInt(b.getBEACH_FAVOR_CNT()) + addCnt);
 			pstmt.setString(2, b.getBEACH_CODE());
 

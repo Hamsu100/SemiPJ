@@ -14,13 +14,6 @@
 	String[] img =((String)request.getAttribute("img")).split(",");
 %>
 
-<%
-	for (String im : img){
-		%>
-		<%=im %>
-		<%
-	}
-%>
 <section class="hero-home2 dark-overlay mb-5"><img class="bg-image" src="<%=path %>/resources/resources/images/back2.jpg" alt="">
         <div class="container py-7">
             <div class="overlay-content text-center text-white">
@@ -44,7 +37,7 @@
                     <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=img[0] %>) no-repeat; background-size: cover;">
                         <a class="tile-link" href="<%=path%>/beach/pop"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">전국</h3>
+                            <h1 class="text-shadow text-uppercase mb-0">전국</h1>
                         </div>
                     </div>
                 </div>
@@ -54,7 +47,7 @@
                     <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=img[1] %>) no-repeat; background-size: cover;">
                         <a class="tile-link" href="<%=path%>/beach/pop?locName=동해"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">동해</h3>
+                            <h1 class="text-shadow text-uppercase mb-0">동해</h1>
                         </div>
                     </div>
                 </div>
@@ -62,7 +55,7 @@
                     <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=img[2] %>) no-repeat; background-size: cover;">
                         <a class="tile-link" href="<%=path%>/beach/pop?locName=서해"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">서해</h3>
+                            <h1 class="text-shadow text-uppercase mb-0">서해</h1>
                         </div>
                     </div>
                 </div>
@@ -70,7 +63,7 @@
                     <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=img[3] %>) no-repeat; background-size: cover;">
                         <a class="tile-link" href="<%=path%>/beach/pop?locName=남해"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow text-uppercase mb-0">남해</h3>
+                            <h1 class="text-shadow text-uppercase mb-0">남해</h1>
                         </div>
                     </div>
                 </div>
@@ -78,7 +71,7 @@
                     <div class="card shadow-lg border-0 w-100 border-0 hover-animate" style="background: center center url(<%=img[4] %>) no-repeat; background-size: cover;">
                         <a class="tile-link" href="<%=path%>/beach/pop?locName=제주"> </a>
                         <div class="d-flex align-items-center h-100 text-white justify-content-center py-6 py-lg-7">
-                            <h3 class="text-shadow mb-0">제주</h3>
+                            <h1 class="text-shadow mb-0">제주</h1>
                         </div>
                     </div>
                 </div>
@@ -110,10 +103,11 @@
                     <div class="card  border-0 w-100 border-0">
                         <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bpList.get(i).getBEACH_CODE()%>"> </a>
                         <div class="d-flex text-black">
-                            <h4 class="ms-3"><%=bpList.get(i).getBEACH_NAME() %></h4>
+                            <h3 class="ms-3"><%=bpList.get(i).getBEACH_NAME() %></h3>
                         </div>
                         <div>
-                            <p class="ms-3" style=" overflow: hidden;
+  <p class="ms-3">주소 : <%=bpList.get(i).getBEACH_ADDRESS() %></p>
+                            <p class="ms-3 text-muted" style=" overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 4;
@@ -142,9 +136,10 @@
                         <div class="card  border-0 w-100 border-0">
                             <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bpList.get(i).getBEACH_CODE()%>"> </a>
                             <div class="d-flex text-black">
-                                <h4 class="ms-3"><%=bpList.get(i).getBEACH_NAME() %></h4>
+                                <h3 class="ms-3"><%=bpList.get(i).getBEACH_NAME() %></h3>
                             </div>
                             <div>
+  <p class="ms-3">주소 : <%=bpList.get(i).getBEACH_ADDRESS() %></p>
                                 <p class="ms-3" style=" overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;

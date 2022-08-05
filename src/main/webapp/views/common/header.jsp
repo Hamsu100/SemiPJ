@@ -55,55 +55,43 @@ User loginUser = (User) session.getAttribute("loginUser");
 	<header class="header">
 		<nav
 			class="navbar navbar-expand-lg fixed-top shadow navbar-light bg-white">
-			<div class="container-fluid">
+			<div class="container-fluid offset-1-1">
 				<div class="d-flex align-items-center">
 					<a class="navbar-brand py-0" href="<%=path%>/index"><img class="logo"
 						src="<%=path %>/resources/resources/images/logo5.png" alt="wave logo"></a>
 					<!-- 로고를 누르면 홈으로 -->
 				</div>
-				<div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="collapse navbar-collapse me-7-1" id="navbarCollapse">
 					<ul class="navbar-nav ms-auto">
 						<li class="nav-item"><a class="nav-link" href="<%=path%>/index">HOME</a></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" id="beachDropdownMenuLink"
-							href="" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> BEACH</a>
-							<div class="dropdown-menu dropdown-menu-end"
-								aria-labelledby="beachDropdownMenuLink">
-								<a class="dropdown-item" href="<%=path%>/beach/search">- 해수욕장 검색하기 </a> <a
-									class="dropdown-item" href="<%=path%>/beach/pop">- 인기지역 </a> <a
-									class="dropdown-item" href="">- 주변시설 찾아보기 </a>
-							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" id="maketDropdownMenuLink"
-							href="main.html" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> MARKET</a>
-							<div class="dropdown-menu dropdown-menu-end"
-								aria-labelledby="maketDropdownMenuLink">
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="beachDropdownMenuLink" href="" data-bs-toggle="dropdown" aria-haspopup="true"	aria-expanded="false"> BEACH</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="beachDropdownMenuLink">
+								<a class="dropdown-item" href="<%=path%>/beach/search">- 해수욕장 검색하기 </a>
+								<a class="dropdown-item" href="<%=path%>/beach/pop">- 인기지역 </a> 
+							</div>
+						</li>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="maketDropdownMenuLink" href="main.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MARKET</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="maketDropdownMenuLink">
 								<h6 class="dropdown-header fw-normal">당신이 찾는 그 모든 것</h6>
-								<a class="dropdown-item" href="">- 마켓 모아보기 </a> <a
-									class="dropdown-item" href="">- 용품샵 </a>
-							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" id="boardDropdownMenuLink"
-							href="main.html" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> COMMUNITY</a>
-							<div class="dropdown-menu dropdown-menu-end"
-								aria-labelledby="boardDropdownMenuLink">
+								 <a	class="dropdown-item" href="">- 용품샵 </a>
+							</div>
+						</li>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="boardDropdownMenuLink" href="main.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> COMMUNITY</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="boardDropdownMenuLink">
 								<h6 class="dropdown-header fw-normal">게시판들</h6>
-								<a class="dropdown-item" href="<%=path%>/board/list">- 게시판 모아보기 </a> <a
-									class="dropdown-item" href="otherblog.html">- 블로그 파도타기</a> <a
-									class="dropdown-item" href="myblog.html">- MY Blog</a>
-							</div></li>
-						<li class="nav-item dropdown"><a
-							class="nav-link dropdown-toggle" id="blogDropdownMenuLink"
-							href="main.html" data-bs-toggle="dropdown" aria-haspopup="true"
-							aria-expanded="false"> MY PAGE</a>
-							<div class="dropdown-menu dropdown-menu-end"
-								aria-labelledby="blogDropdownMenuLink">
-								<a class="dropdown-item" href="otherblog.html">- 블로그 파도타기</a> <a
-									class="dropdown-item" href="myblog.html">- MY Blog</a>
-							</div></li>
+								<a class="dropdown-item" href="<%=path%>/board/list">- 게시판 모아보기 </a> 
+								<a class="dropdown-item" href="otherblog.html">- 블로그 파도타기</a> 
+								<a class="dropdown-item" href="myblog.html">- MY Blog</a>
+							</div>
+						</li>
+						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="blogDropdownMenuLink" href="main.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MY PAGE</a>
+							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="blogDropdownMenuLink">
+								<a class="dropdown-item" href="myblog2.html">- MY Blog</a>
+							</div>
+						</li>
+						
+						
+						
 					<%if (loginUser == null) {%>
 						<li class="nav-item"><a class="nav-link" href="<%=path %>/user/login">SIGN
 								IN</a></li>

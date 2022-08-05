@@ -15,6 +15,7 @@ List<String> favor = (List<String>) request.getAttribute("favor");
     <section class="py-4">
         <div class="container mt-5 mb-5">
             <h1 class="nameOfBeach"><%=b.getBEACH_NAME() %></h1>
+            <h5 class="simpleExplanation"><%=b.getBEACH_CONTENT().substring(0, b.getBEACH_CONTENT().indexOf("다.")+1) %></h5>
         </div>
     </section>
     <!-- 사진 하나, 날씨 해수욕지수 파싱된 것-->
