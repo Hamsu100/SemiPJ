@@ -88,7 +88,7 @@
                                         <div class="card h-auto border">
                                         
                                         	<!-- img -->
-                                        	<% if (cafeAll.getCafe_img() == null) { %>
+                                        	<% if (cafeAll.getCafe_img() == null || !cafeAll.getCafe_img().contains("http")) { %>
                                             	<div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(<%= imgNull.get(imgNullCount++) %>); min-height: 250px;">
                                             	<% 
                                             	if (imgNullCount == imgNull.size()) {

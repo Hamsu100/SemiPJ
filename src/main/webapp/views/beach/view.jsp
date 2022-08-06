@@ -276,7 +276,7 @@ List<Park> parkTopList = (List<Park>) request.getAttribute("parkTopList");
                                     	CommonParse parse = new CommonParse();
                                     	List<String> list = parse.textLineToList(stayMain.getImg());
                                     	%>
-                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%= list.get(0) %>">
+                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%=list != null && list.isEmpty() == false ? list.get(0) :""%>">
 	                                <% } %>
                                     	
                                 </div>
@@ -354,7 +354,7 @@ List<Park> parkTopList = (List<Park>) request.getAttribute("parkTopList");
                                     	CommonParse parse = new CommonParse();
                                     	List<String> list = parse.textLineToList(campMain.getCamp_img());
                                     	%>
-                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%= list.get(0) %>">
+                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%=list != null && list.isEmpty() == false ? list.get(0) :""%>">
 	                                <% } %>
                                     	
                                 </div>
@@ -432,7 +432,7 @@ List<Park> parkTopList = (List<Park>) request.getAttribute("parkTopList");
                                     	CommonParse parse = new CommonParse();
                                     	List<String> list = parse.textLineToList(leiMain.getLeisure_img());
                                     	%>
-                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%= list.get(0) %>">
+                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%=list != null && list.isEmpty() == false ? list.get(0) :""%>">
 	                                <% } %>
                                     	
                                 </div>
@@ -510,7 +510,7 @@ List<Park> parkTopList = (List<Park>) request.getAttribute("parkTopList");
                                     	CommonParse parse = new CommonParse();
                                     	List<String> list = parse.textLineToList(cafeMain.getCafe_img());
                                     	%>
-                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%= list.get(0) %>">
+                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%=list != null && list.isEmpty() == false ? list.get(0) :""%>">
 	                                <% } %>
                                     	
                                 </div>
@@ -590,7 +590,7 @@ List<Park> parkTopList = (List<Park>) request.getAttribute("parkTopList");
                                     	CommonParse parse = new CommonParse();
                                     	List<String> list = parse.textLineToList(resMain.getRes_img());
                                     	%>
-                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%= list.get(0) %>">
+                                    	<img class="d-block p-2 mb-2 fadeimg3" src="<%=list != null && list.isEmpty() == false ? list.get(0) :""%>">
 	                                <% } %>
                                     	
                                 </div>

@@ -226,7 +226,6 @@
             </div>
         </div>
         <hr class="my-4">
-        
         <!-- 사진들 -->
         <!-- 최소 4 사진들 중간 정렬  -->
         <div class="swiper-container detail-slider slider-gallery">

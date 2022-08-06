@@ -37,7 +37,7 @@ public class CommonParse {
 				for (String param : respParam) {
 					if (el.getElementsByTagName(param).item(0) != null) {
 //						tempMap.put(param, el.getElementsByTagName(param).item(0).getTextContent());
-						tempMap.put(param,getStrDate(el, param));
+						tempMap.put(param, getStrDate(el, param));
 					}
 				}
 				list.add(tempMap);
@@ -48,7 +48,7 @@ public class CommonParse {
 
 		return list;
 	}
-	
+
 	private static String getStrDate(Element element, String tagName) {
 		try {
 			return element.getElementsByTagName(tagName).item(0).getTextContent();
@@ -56,7 +56,6 @@ public class CommonParse {
 			return "";
 		}
 	}
-	
 
 	public List<Map<String, String>> parseCSV(String filePath) {
 
@@ -65,8 +64,7 @@ public class CommonParse {
 				BufferedReader br = new BufferedReader(fr);) {
 			String line = br.readLine();
 			String[] header = line.split(",");
-			
-			
+
 			while ((line = br.readLine()) != null) {
 				Map<String, String> tempMap = new HashMap<>();
 				String delQuat = quatation(line);
@@ -82,48 +80,44 @@ public class CommonParse {
 		}
 		return list;
 	}
-	
+
 	public String quatation(String line) {
 		int start = line.indexOf("\"");
 		int end = line.lastIndexOf("\"");
-		if (start >0) {
+		if (start > 0) {
 			String str1 = line.substring(start, end + 1);
 			String str2 = str1.replace(",", " ").replace("\"", "").replace("  ", " ");
-			line = line.replace(str1,str2);
+			line = line.replace(str1, str2);
 		}
 		return line;
 	}
-	
-	
-	
-	
-	
+
 //	private static List<String> textLineToList(String textLine) {
 	public List<String> textLineToList(String textLine) {
 		try {
 			String delemeter = ",";
-			
+
 //			if (csvLine.contains(",\"") == true) {		//<<2
 //				csvLine = filter(csvLine);
 //			}
-			
+
 			List<String> list = new ArrayList<String>();
 			String[] array = textLine.split(delemeter);
 			for (String str : array) {
-				
+
 //				str = str.replace("\"", "").strip().replace("_", ",");		//<<2
-				
-				list.add(str);
+				if (str != null && str.length() > 1) {
+					list.add(str);
+				}
 			}
 			return list;
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return null;		//<<1
+		return null; // <<1
 	}
-	
-	
+
 //	private static String filter(String str) {		//<<2
 //		StringBuffer sb = new StringBuffer(str);
 //		StringBuffer newsb = new StringBuffer();
