@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-public class CommonParse {
+public class ParseCommon {
 
 	public List<Map<String, String>> parseXML(String url, String index, String[] respParam) {
 		List<Map<String, String>> returnList = new ArrayList<>();

@@ -11,7 +11,7 @@ import java.util.Map;
 
 public class GetAreaCode {
 
-	private CommonParse cp = new CommonParse();
+	private ParseCommon cp = new ParseCommon();
 
 	public List<AreaCode> getAreaCode() {
 		List<AreaCode> returnList = new ArrayList<>();
