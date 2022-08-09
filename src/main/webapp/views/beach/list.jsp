@@ -97,16 +97,23 @@ List<String> favorList = (List<String>)request.getAttribute("favorList");
                 }
             }();
     </script>
+    <section class="d-flex align-items-center dark-overlay bg-cover" style="background-image: url(<%=path%>/resources/resources/images/back3.jpg);">
+        <!-- 위에 url에 해수욕장 사진 -->
+        <div class="container py-6 py-lg-7 text-white overlay-content">
+            <div class="row">
+                <div class="col-xl-8">
+                    <h1 class="display-3 fw-bold text-shadow">해수욕장 검색 목록</h1>
+                </div>
+            </div>
+        </div>
+    </section>
 <!-- 검색내역 -->
-    <div class="container-fluid">
+    <div class="container col-lg-12 mb-3">
+    	<div class="search-bar search-bar-with-tabs p-lg-4 ">
+    	<div class="col-lg-12 p-xl-5">
         <div class="row">
-            <div class="col-lg-6 py-5 p-xl-5">
-                <h1 class="fontEB mb-4">해수욕장 찾아보기</h1>
-                <hr class="my-4">
+            <div class="row col-lg-6">
                 <div class="d-flex justify-content-between align-items-center flex-column flex-md-row mb-4">
-                    <div class="me-3">
-                        <p class="mb-3 mb-md-0"><strong><%=bchList.isEmpty()? "0":bchCnt %></strong> results found</p>
-                    </div>
 
                 </div>
                 <div class="row">
@@ -120,7 +127,7 @@ List<String> favorList = (List<String>)request.getAttribute("favorList");
                  
                 
                     <!-- venue item-->
-                    <div class="col-sm-6 mb-5 hover-animate" data-marker-id="59c0c8e3a31e62979bf147c9">
+                    <div class="col-sm-6 mb-4 hover-animate" data-marker-id="59c0c8e3a31e62979bf147c9">
                         <div class="card h-100 border-0 shadow">
                             <div class="card-img-top overflow-hidden dark-overlay bg-cover" style="background-image: url(<%=bch.getBEACH_IMG().split(",")[0].length() ==0? bchNoImg : bch.getBEACH_IMG().split(",")[0] %>); min-height: 200px;">
                                 <a class="tile-link" href="<%=path%>/beach/view?beachCode=<%=bch.getBEACH_CODE()%>"></a>
@@ -210,6 +217,8 @@ List<String> favorList = (List<String>)request.getAttribute("favorList");
             <div class="col-sm-6 mb-5">
                 <div class="map-full shadow-left" id="map" style="height:100%" ></div>
             </div>
+        </div>
+        </div>
         </div>
     </div>
 <!-- 지도 스크립트 -->

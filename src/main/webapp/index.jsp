@@ -154,75 +154,70 @@ List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
         </div>
     </section>
     <!-- 인기 지역 센션 끝 -->
-    <!-- 블로그 및 날씨 -->
     <section class="py-4 bg-gray-100">
         <div class="container">
             <div class="row">
-                <div class="seven">
-                    <div class="row mb-4 ">
-                        <div class="col-md-8">
-                            <p class="subtitle text-secondary ">Stories from around the globe</p>
-                            <h2>From our travel blog</h2>
-                        </div>
-                        <div class="col-md-4 d-md-flex align-items-center justify-content-end"><a class="text-muted text-sm" href="otherblog.html">
+                <div class="row mb-4 ">
+                    <div class="col-md-8">
+                        <p class="subtitle text-secondary ">Stories from around the globe</p>
+                        <h2>From our travel blog</h2>
+                    </div>
+                    <div class="col-md-4 d-md-flex align-items-center justify-content-end"><a class="text-muted text-sm" href="otherblog.html">
                        See all articles<i class="fas fa-angle-double-right ms-2"></i></a></div>
-                    </div>
-                    <div class="row">
-                        <!-- blog item-->
-                        <div class="col-lg-3-1 col-sm-4 mb-4 ms-3 me-4 hover-animate">
-                            <div class="card shadow border-0 h-100">
-                                <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image1.jpg" alt="..." /></a>
-                                <div class="card-body2">
-                                    <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                    <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                    <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                    <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog item-->
-                        <div class="col-lg-3-1 col-sm-4 mb-4 me-4 hover-animate">
-                            <div class="card shadow border-0 h-100">
-                                <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
-                                <div class="card-body2">
-                                    <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                    <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                    <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                    <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- blog item-->
-                        <div class="col-lg-3-1 col-sm-4 mb-4 me-4 hover-animate">
-                            <div class="card shadow border-0 h-100">
-                                <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
-                                <div class="card-body2">
-                                    <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                    <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                    <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                    <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <!-- 날씨 -->
-                <div class="two ms-5">
-                    <div>
-                        <div class="col-md-12">
-                            <p class="subtitle text-secondary">Before Travel</p>
-                            <h4>Check Weather</h4>
+                <div class="row">
+                    <!-- blog item-->
+                    <div class="col-lg-3   hover-animate">
+                        <div class="card shadow border-0 h-100">
+                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image1.jpg" alt="..." /></a>
+                            <div class="card-body2">
+                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
+                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
+                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
+                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-4 mb-4">
-                        <iframe class="shadow" width="350" height="410" src="https://embed.windy.com/embed2.html?lat=35.818&lon=127.925&detailLat=37.514&detailLon=126.886&width=300&height=400&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
-                            frameborder="0"></iframe>
+                    <!-- blog item-->
+                    <div class="col-lg-3   hover-animate">
+                        <div class="card shadow border-0 h-100">
+                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
+                            <div class="card-body2">
+                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
+                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
+                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
+                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog item-->
+                    <div class="col-lg-3  hover-animate">
+                        <div class="card shadow border-0 h-100">
+                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
+                            <div class="card-body2">
+                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
+                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
+                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
+                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- blog item-->
+                    <div class="col-lg-3  hover-animate">
+                        <div class="card shadow border-0 h-100">
+                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
+                            <div class="card-body2">
+                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
+                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
+                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
+                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- 블로그 및 날씨 끝 -->
     <!--  자유게시판, 쇼핑, 안전교육 유튜브 섹션  -->
     <section class="py-4">
         <section class="py-4">
@@ -262,103 +257,22 @@ List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
                     </div>
                 </div>
 
-                
-                <!-- 쇼핑, 안전교육 -->
-                <div class="five-1 ms-3">
-                    <div>
-                        <!-- Slider main container-->
-                        <div class="swiper-container swiper-container-mx-negative swiper-init pt-3" data-swiper="{&quot;slidesPerView&quot;:4,&quot;spaceBetween&quot;:20,&quot;loop&quot;:true,&quot;roundLengths&quot;:true,&quot;breakpoints&quot;:{&quot;1200&quot;:{&quot;slidesPerView&quot;:3},&quot;991&quot;:{&quot;slidesPerView&quot;:2},&quot;565&quot;:{&quot;slidesPerView&quot;:1}},&quot;pagination&quot;:{&quot;el&quot;:&quot;.swiper-pagination&quot;,&quot;clickable&quot;:true,&quot;dynamicBullets&quot;:true}}">
-                            <!-- Additional required wrapper-->
-                            <div class="swiper-wrapper pb-4">
-                                <!-- Slides-->
-                                <div class="swiper-slide h-auto px-2">
-                                    <!-- place item-->
-                                    <div class="w-100 h-100 hover-animate">
-                                        <div class="card h-100 border-0 shadow">
-                                            <div class="card-img-top overflow-hidden gradient-overlay"> <img class="img-fluid" src="resources/resources/images/image1.jpg" alt="Modern, Well-Appointed Room" />
-                                                <a class="tile-link" href="detail-rooms.html"></a>
-                                            </div>
-                                            <div class="card-body-center d-flex">
-                                                <div class="w-100">
-                                                    <h6 class="card-title"><a class="text-decoration-none text-dark" href="detail-rooms.html">NIKE 수영복</a></h6>
-                                                    <div class="d-flex card-subtitle mb-3">
-                                                    </div>
-                                                    <p class="card-text text-muted"><span class="h4 text-primary">$80</span><br> 20% Discount</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide h-auto px-2">
-                                    <!-- place item-->
-                                    <div class="w-100 h-100 hover-animate">
-                                        <div class="card h-100 border-0 shadow">
-                                            <div class="card-img-top overflow-hidden gradient-overlay"> <img class="img-fluid" src="resources/resources/images/image1.jpg" alt="Modern, Well-Appointed Room" />
-                                                <a class="tile-link" href="detail-rooms.html"></a>
-                                            </div>
-                                            <div class="card-body-center d-flex">
-                                                <div class="w-100">
-                                                    <h6 class="card-title"><a class="text-decoration-none text-dark" href="detail-rooms.html">선풍기</a></h6>
-                                                    <div class="d-flex card-subtitle mb-3">
-
-                                                    </div>
-                                                    <p class="card-text text-muted"><span class="h4 text-primary">$80</span><br> 20% Discount</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide h-auto px-2">
-                                    <!-- place item-->
-                                    <div class="w-100 h-100 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92">
-                                        <div class="card h-100 border-0 shadow">
-                                            <div class="card-img-top overflow-hidden gradient-overlay"> <img class="img-fluid" src="resources/resources/images/image1.jpg" alt="Modern, Well-Appointed Room" />
-                                                <a class="tile-link" href="detail-rooms.html"></a>
-                                            </div>
-                                            <div class="card-body-center d-flex">
-                                                <div class="w-100">
-                                                    <h6 class="card-title"><a class="text-decoration-none text-dark" href="detail-rooms.html">물안경</a></h6>
-                                                    <div class="d-flex card-subtitle mb-3">
-
-                                                    </div>
-                                                    <p class="card-text text-muted"><span class="h4 text-primary">$80</span><br> 20% Discount</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide h-auto px-2">
-                                    <!-- place item-->
-                                    <div class="w-100 h-100 hover-animate" data-marker-id="59c0c8e33b1527bfe2abaf92">
-                                        <div class="card h-100 border-0 shadow">
-                                            <div class="card-img-top overflow-hidden gradient-overlay"> <img class="img-fluid" src="resources/resources/images/image1.jpg" alt="Modern, Well-Appointed Room" />
-                                                <a class="tile-link" href="detail-rooms.html"></a>
-                                            </div>
-                                            <div class="card-body-center d-flex">
-                                                <div class="w-100">
-                                                    <h6 class="card-title"><a class="text-decoration-none text-dark" href="detail-rooms.html">구명조끼</a></h6>
-                                                    <div class="d-flex card-subtitle mb-3">
-
-                                                    </div>
-                                                    <p class="card-text text-muted"><span class="h3 text-primary">$80</span><br> 20% Discount</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+				<div class="five-1 ms-3 row">
                     <!-- 안전교육 -->
-                    <div class="five-1">
-                        <iframe width="230" height="150" class="me-3" src="https://www.youtube.com/embed/cPzfgOK6zn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                    <div class="col-lg-6 me-3">
+                        <iframe width="350" height="200" src="https://www.youtube.com/embed/cPzfgOK6zn0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                     </iframe>
-                        <iframe width="230" height="150" class="me-3" src="https://www.youtube.com/embed/UL8C6TaLucI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-                                    </iframe>
-                        <iframe width="230" height="150" class="me-3" src="https://www.youtube.com/embed/MmvgY-WcMoQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                        <hr class="my-2">
+                        <iframe width="350" height="200" src="https://www.youtube.com/embed/UL8C6TaLucI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
                                     </iframe>
                     </div>
-                </div>
+                    <!-- 날씨 -->
+                    <div class="col-lg-5 ">
+                        <iframe class="shadow" width="350" height="425" src="https://embed.windy.com/embed2.html?lat=35.818&lon=127.925&detailLat=37.514&detailLon=126.886&width=300&height=400&zoom=6&level=surface&overlay=wind&product=ecmwf&menu=&message=true&marker=&calendar=12&pressure=&type=map&location=coordinates&detail=&metricWind=default&metricTemp=default&radarRange=-1"
+                            frameborder="0"></iframe>
+                    </div>
+                </div>                
+                
             </div>
     </section>
     

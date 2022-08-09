@@ -58,7 +58,7 @@ public class BeachListServlet extends MyHttpServlet {
 			e.printStackTrace();
 		}
 		beachCnt = bs.listCnt(searchMap);
-		pageInfo = new PageInfo(page, 10, beachCnt, 6);
+		pageInfo = new PageInfo(page, 10, beachCnt, 4);
 		List<Beach> bchList = bs.getBchList(searchMap, pageInfo);
 		double[] avgLatLng = avgCoordi(bchList);
 		req.setAttribute("favorList", favorList);

@@ -69,7 +69,7 @@
 <!-- 풋터-->
     <footer class="position-relative z-index-10 d-print-none">
         <!-- Main block - menus, subscribe form-->
-        <div class="py-6 bg-gray-200 text-muted">
+        <div class="py-5 bg-gray-200 text-muted">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 mb-5 mb-lg-0">
@@ -88,7 +88,6 @@
                         <ul class="list-unstyled">
                             <li><a class="text-muted" href="<%=path%>/beach/search">Search</a></li>
                             <li><a class="text-muted" href="<%=path%>/beach/pop">Popularity</a></li>
-                            <li><a class="text-muted" href="shop.html">Goods shop </a></li>
                         </ul>
                     </div>
                     <div class="col-lg-2 col-md-6 mb-5 mb-lg-0">

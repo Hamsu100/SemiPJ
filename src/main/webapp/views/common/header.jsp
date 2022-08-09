@@ -70,12 +70,6 @@ User loginUser = (User) session.getAttribute("loginUser");
 								<a class="dropdown-item" href="<%=path%>/beach/pop">- 인기지역 </a> 
 							</div>
 						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="maketDropdownMenuLink" href="main.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MARKET</a>
-							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="maketDropdownMenuLink">
-								<h6 class="dropdown-header fw-normal">당신이 찾는 그 모든 것</h6>
-								 <a	class="dropdown-item" href="">- 용품샵 </a>
-							</div>
-						</li>
 						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="boardDropdownMenuLink" href="main.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> COMMUNITY</a>
 							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="boardDropdownMenuLink">
 								<h6 class="dropdown-header fw-normal">게시판들</h6>
