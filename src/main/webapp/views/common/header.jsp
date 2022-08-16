@@ -74,13 +74,7 @@ User loginUser = (User) session.getAttribute("loginUser");
 							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="boardDropdownMenuLink">
 								<h6 class="dropdown-header fw-normal">게시판들</h6>
 								<a class="dropdown-item" href="<%=path%>/board/list">- 게시판 모아보기 </a> 
-								<a class="dropdown-item" href="otherblog.html">- 블로그 파도타기</a> 
-								<a class="dropdown-item" href="myblog.html">- MY Blog</a>
-							</div>
-						</li>
-						<li class="nav-item dropdown"><a class="nav-link dropdown-toggle" id="blogDropdownMenuLink" href="main.html" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> MY PAGE</a>
-							<div class="dropdown-menu dropdown-menu-end" aria-labelledby="blogDropdownMenuLink">
-								<a class="dropdown-item" href="myblog2.html">- MY Blog</a>
+								<a class="dropdown-item" href="<%=path%>/blog/list/new">- 블로그 파도타기</a> 
 							</div>
 						</li>
 						

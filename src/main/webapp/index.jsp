@@ -1,3 +1,4 @@
+<%@page import="com.kh.blog.model.vo.Blog"%>
 <%@page import="com.kh.beach.model.vo.Beach"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.HashMap"%>
@@ -14,6 +15,7 @@ List<Board> list = (List<Board>)request.getAttribute("bList");
 SimpleDateFormat sdf = new SimpleDateFormat("yyyy.M.d");
 
 List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
+List<Blog> blogList = (List<Blog>) request.getAttribute("blogListTop");
 %>
 
 <script>
@@ -154,67 +156,43 @@ List<Beach> pbList = (List<Beach>) request.getAttribute("pbList");
         </div>
     </section>
     <!-- 인기 지역 센션 끝 -->
-    <section class="py-4 bg-gray-100">
+    <section class="py-5 bg-gray-100">
         <div class="container">
             <div class="row">
+            
                 <div class="row mb-4 ">
                     <div class="col-md-8">
-                        <p class="subtitle text-secondary ">Stories from around the globe</p>
+                        <p class="subtitle text-secondary">Recently stories</p>
                         <h2>From our travel blog</h2>
                     </div>
-                    <div class="col-md-4 d-md-flex align-items-center justify-content-end"><a class="text-muted text-sm" href="otherblog.html">
-                       See all articles<i class="fas fa-angle-double-right ms-2"></i></a></div>
                 </div>
+                
                 <div class="row">
-                    <!-- blog item-->
-                    <div class="col-lg-3   hover-animate">
-                        <div class="card shadow border-0 h-100">
-                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image1.jpg" alt="..." /></a>
-                            <div class="card-body2">
-                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- blog item-->
-                    <div class="col-lg-3   hover-animate">
-                        <div class="card shadow border-0 h-100">
-                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
-                            <div class="card-body2">
-                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- blog item-->
-                    <div class="col-lg-3  hover-animate">
-                        <div class="card shadow border-0 h-100">
-                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
-                            <div class="card-body2">
-                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- blog item-->
-                    <div class="col-lg-3  hover-animate">
-                        <div class="card shadow border-0 h-100">
-                            <a href="post.html"><img class="img-fluid card-img-top" src="resources/resources/images/image2.jpg" alt="..." /></a>
-                            <div class="card-body2">
-                                <h5 class="my-2"><a class="text-dark" href="otherblog.html">How far I'll go</a></h5>
-                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i>여행 로케이션</p>
-                                <p class="my-2 text-muted text-sm">See the line where the sky meets the sea? ...</p>
-                                <a class="btn btn-link ps-0" href="otherblog.html">Read more<i class="fa fa-long-arrow-alt-right ms-2"></i></a>
-                            </div>
-                        </div>
-                    </div>
+	                <% if (blogList != null && blogList.isEmpty() == false) { %>
+	                
+	                	<% for (Blog bglist : blogList) { %>
+		                    <!-- blog item-->
+		                    <div class="col-lg-3 hover-animate">
+		                        <div class="card shadow border-0 h-100">
+		                       		<img class="img-fluid card-img-top" style="width: 100%; object-fit: cover; aspect-ratio: 5/4;" src="<%=path%>/resources/upload/blog/<%=bglist.getBlog_renameimg()%>" alt="" />
+		                            
+		                            <div class="card-body2 text-center">
+		                          		<% String blog_content = "#" + bglist.getBlog_content().replaceAll(" ", "_"); %>
+		                                <h6 class="my-2 text-dark multiLine1"><%= blog_content.replaceAll("###", "#").replaceAll("##", "#").replaceAll("_#", " #") %></h6>
+		                                <p class="text-sm text-secondary card-subtitle mb-2"><i class="fa fa-map-marker text-secondary opacity-4 me-1"></i><strong><%= bglist.getArea_name() %></strong></p>
+		                                <p class="my-2 text-muted text-sm multiLine3"><%= bglist.getBlog_subcontent() %></p>
+		                                <p class="text-sm text-secondary text-uppercase mb-1">작성자 &nbsp;<span class="text-dark"><%= bglist.getUser_id().substring(0, bglist.getUser_id().indexOf("@")) %></span></p>
+		                            </div>
+		                        </div>
+		                    </div>
+		                    
+	                	<% } %>
+	                <% } else { %>
+	                	Error!
+	                <% } %>
                 </div>
+                <div class="py-4"></div>
+              	<div style=" text-align: center;"><a class="btn btn-link ps-0 py-2" href="<%=path%>/blog/list/new">Read details<i class="fa fa-long-arrow-alt-right ms-2"></i></a></div>
             </div>
         </div>
     </section>

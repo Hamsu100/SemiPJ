@@ -166,18 +166,22 @@ List<Park> parkTopList = (List<Park>) request.getAttribute("parkTopList");
     						break;
     					}
     					%>
-                    <div class="row">
-                        <div class="col-md-12 mt-5">
-                            <h4>해수욕 지수</h4>
+                    <div class="row mt-4">
+                            <h4>해수욕장 특징</h4>
+                        <div style="width:130px;">
+                            <p><b>해변 길이</b><br> <%=b.getBEACH_LEN() %></p>
+                            <p><b>해변 폭</b><br> <%=b.getBEACH_WID() %></p>
                         </div>
-                        <div>
-                            <p> <%=bi %></p>
+                        <div style="width:130px;">
+                            
+                            <p><b>특징</b><br> <%=b.getBEACH_PROP() %></p>
+                            <p><b>해수욕 지수</b> <br> <%=bi %></p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-12 mt-2">
                             <h4>즐겨찾기</h4>
-
+							
                             <div class="px-4">
                                 	<i class="fa fa-heart me-1 text-secondary"></i> <%=b.getBEACH_FAVOR_CNT() %> &nbsp; &nbsp; &nbsp;&nbsp;
                                 <%

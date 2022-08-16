@@ -1,73 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <!-- Instagram-->
-    <section>
-        <div class="container-fluid px-0">
-            <div class="swiper-container instagram-slider">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta19.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta2.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta11.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta4.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta14.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta6.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta7.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta8.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta3.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta10.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta16.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta12.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta13.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta5.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta15.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta9.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta17.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta18.png" alt=" "></a>
-                    </div>
-                    <div class="swiper-slide overflow-hidden">
-                        <a href="#"><img class="img-fluid hover-scale" src="<%=path %>/resources/resources/images/insta1.png" alt=" "></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    
+<!-- % String path = request.getContextPath(); %> //<<<< header include 이미 있어서 불러와 적용시킬 때 오류 발생 -->  
+    
 <!-- 풋터-->
-    <footer class="position-relative z-index-10 d-print-none">
+     <footer class="position-relative z-index-10 d-print-none">
         <!-- Main block - menus, subscribe form-->
         <div class="py-5 bg-gray-200 text-muted">
             <div class="container">
@@ -169,11 +106,39 @@
     <script src="<%=path %>/resources/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
     <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
     <script src="<%=path %>/resources/vendor/object-fit-images/ofi.min.js"></script>
-    <!-- Swiper Carousel                       -->
+    <!-- Swiper Carousel -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
     <script>
         var basePath = ''
     </script>
+    <!-- Swiper script -->	
+	<script>
+	$(function(){
+	    new Swiper('.swiper-container',{
+	    	// 방향: vertical 수직, horizontal 수평, default: horizontal
+	        direction: 'horizontal',
+	        // 드래그 기능 true/false
+	        debugger: true,
+	        // 무한 반복 기능 true/false
+	        loop: true,
+	        // 마지막 슬라이드 -> 첫슬라이드 자연스러운 반복 기능
+	        loopAdditionalSlides: 0,
+	        // 슬라이드간 간격
+	        spaceBetween: 20,
+	        // 한번에 보여 줄 슬라이드 개수
+	        slidesPerView: 3,
+	    	//센터모드
+	        centeredSlides: true, 
+	        // 자동 스크롤링
+	        autoplay: {
+	            // 1000: 1초
+	            delay: 2500,
+	            disableOnInteraction: false,
+	        },
+	        
+	    });
+	})
+	</script>
     <!-- Main Theme JS file    -->
     <script src="<%=path %>/resources/js/theme.js"></script>
 </body>

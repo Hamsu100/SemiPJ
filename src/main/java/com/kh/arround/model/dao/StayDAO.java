@@ -1,6 +1,7 @@
 package com.kh.arround.model.dao;
 
-import static com.kh.common.jdbc.JDBCTemplate.*;
+import static com.kh.common.jdbc.JDBCTemplate.close;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kh.arround.model.vo.Stay;
-import com.kh.arround.model.vo.Res;
 import com.kh.common.util.PageInfo;
 
 
