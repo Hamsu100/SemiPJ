@@ -17,10 +17,10 @@ Board b = (Board) request.getAttribute("board");
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
     
     
-     <section class="hero-home2 dark-overlay mb-5"><img class="bg-image" src="<%=path %>/resources/resources/images/back2.jpg" alt="">
+     <section class="hero-home2 dark-overlay mb-5"><img class="bg-image" src="<%=path %>/resources/resources/images/back3.jpg" alt="">
         <div class="container py-7">
             <div class="overlay-content text-center text-white">
-                <h1 class="display-3 text-serif fw-bold text-shadow mb-0">Escape the city today</h1>
+                <h1 class="display-3 text-shadow mb-0">게시글 수정</h1>
             </div>
         </div>
     </section>

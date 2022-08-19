@@ -37,7 +37,7 @@ public class BlogListNewServlet extends HttpServlet {
 		}
 		
 		listCount = bs.selectBlogAllCountByNew();
-		pageInfo = new PageInfo(page, 5, listCount, 6);
+		pageInfo = new PageInfo(page, 5, listCount, 4);
 		blogListNew = bs.selectBlogAllByNew(pageInfo);
 		
 		req.setAttribute("blogListNew", blogListNew);
