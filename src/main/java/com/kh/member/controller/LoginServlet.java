@@ -33,20 +33,20 @@ public class LoginServlet extends MyHttpServlet {
 
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+
 		String userId = req.getParameter("loginUsername");
 		String userPw = req.getParameter("userPw");
 		User loginUser = us.login(userId, userPw);
-		
+
 		String saveId = req.getParameter("saveId");
 		saveCookie(resp, saveId, userId);
 
 		if (loginUser != null) {
-			
+
 			HttpSession session = req.getSession();
 			session.setAttribute("loginUser", loginUser); // login data save in session
 			resp.sendRedirect(req.getContextPath() + "/index");
-			
+
 		} else {
 			sendCommonPage("ID/PW 확인해 주세요.", "/", req, resp);
 		}
@@ -56,7 +56,7 @@ public class LoginServlet extends MyHttpServlet {
 	private void saveCookie(HttpServletResponse resp, String saveId, String userId) {
 		if (saveId != null) {
 			Cookie c = new Cookie("saveId", userId);
-			c.setMaxAge(60 * 60);
+			c.setMaxAge(60 * 60 * 24 * 30);
 			resp.addCookie(c);
 		} else {
 			Cookie c = new Cookie("saveId", "");

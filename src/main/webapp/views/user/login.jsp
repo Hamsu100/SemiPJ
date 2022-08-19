@@ -1,16 +1,57 @@
+<%@page import="com.kh.member.model.vo.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@include file="/views/common/header.jsp" %>
+    
+<%
+String path = request.getContextPath();
+String bchNoImg ="https://cdn.imweb.me/thumbnail/20210712/61009d196445a.jpg";
+User loginUser = (User) session.getAttribute("loginUser");
+%>
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="all,follow">
+<title>BADADA</title>
+<!-- Price Slider Stylesheets -->
+<link rel="stylesheet" href="<%=path %>/resources/vendor/nouislider/nouislider.css">
+<!-- Google fonts - Playfair Display-->
+<link
+	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
+	rel="stylesheet">
+<!-- Google fonts - Poppins-->
+<link
+	href="https://hangeul.pstatic.net/hangeul_static/css/nanum-square-round.css"
+	rel="stylesheet">
+<!-- swiper-->
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+<!-- Magnigic Popup-->
+<link rel="stylesheet"
+	href="<%=path %>/resources/vendor/magnific-popup/magnific-popup.css">
+<!-- theme stylesheet-->
+<link rel="stylesheet" href="<%=path %>/resources/resources/css/style.sea.css"
+	id="theme-stylesheet">
+<!-- Custom stylesheet - for your changes-->
+<link rel="stylesheet" href="<%=path %>/resources/resources/css/custom.css">
+<!-- Font Awesome CSS-->
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+<!-- 타이틀 옆 아이콘-->
+<link rel="shortcut icon" href="<%=path %>/resources/resources/images/wave.png">
+</head>
 
 <%
 String saveId="";
 Cookie[] cookies = request.getCookies();
 if(cookies != null){
 	for(Cookie c : cookies) { 
-		%>
-		
-		<%=c.getName() %> : <%=c.getValue() %>
-		<%
 		if(c.getName().equals("saveId")){
 			saveId = c.getValue();
 			break;
@@ -18,7 +59,6 @@ if(cookies != null){
 	}
 } 
 %>
-saveId : <%=saveId %>
 
     <div class="container-fluid px-3">
         <div class="row min-vh-100">
@@ -67,4 +107,49 @@ saveId : <%=saveId %>
         </div>
     </div>
 
-<%@include file="/views/common/footer.jsp" %>
+<script>
+        // ------------------------------------------------------- //
+        //   Inject SVG Sprite - 
+        //   see more here 
+        //   https://css-tricks.com/ajaxing-svg-sprite/
+        // ------------------------------------------------------ //
+        function injectSvgSprite(path) {
+
+            var ajax = new XMLHttpRequest();
+            ajax.open("GET", path, true);
+            ajax.send();
+            ajax.onload = function(e) {
+                var div = document.createElement("div");
+                div.className = 'd-none';
+                div.innerHTML = ajax.responseText;
+                document.body.insertBefore(div, document.body.childNodes[0]);
+            }
+        }
+        // to avoid CORS issues when viewing using file:// protocol, using the demo URL for the SVG sprite
+        // use your own URL in production, please :)
+        // https://demo.bootstrapious.com/directory/1-0/icons/orion-svg-sprite.svg
+        //- injectSvgSprite('${path}icons/orion-svg-sprite.svg'); 
+        injectSvgSprite('https://demo.bootstrapious.com/directory/1-4/icons/orion-svg-sprite.svg');
+    </script>
+    <!-- jQuery-->
+    <script src="<%=path %>/resources/vendor/jquery/jquery.min.js"></script>
+    <!-- Bootstrap JS bundle - Bootstrap + PopperJS-->
+    <script src="<%=path %>/resources/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Magnific Popup - Lightbox for the gallery-->
+    <script src="<%=path %>/resources/vendor/magnific-popup/jquery.magnific-popup.min.js"></script>
+    <!-- Smooth scroll-->
+    <script src="<%=path %>/resources/vendor/smooth-scroll/smooth-scroll.polyfills.min.js"></script>
+    <!-- Bootstrap Select-->
+    <script src="<%=path %>/resources/vendor/bootstrap-select/js/bootstrap-select.min.js"></script>
+    <!-- Object Fit Images - Fallback for browsers that don't support object-fit-->
+    <script src="<%=path %>/resources/vendor/object-fit-images/ofi.min.js"></script>
+    <!-- Swiper Carousel                       -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+    <script>
+        var basePath = ''
+    </script>
+    <!-- Main Theme JS file    -->
+    <script src="<%=path %>/resources/js/theme.js"></script>
+</body>
+
+</html>

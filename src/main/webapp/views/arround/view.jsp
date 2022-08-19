@@ -397,4 +397,4 @@
     marker.setMap(map);
 </script>
 
-<%@include file = "/views/common/footer.jsp" %>
+<%@include file = "/views/common/footer2.jsp" %>

@@ -7,7 +7,7 @@
 List<Beach> bList = (List<Beach>)request.getAttribute("bList");
 
 %>
-<section class="d-flex align-items-center dark-overlay bg-cover" style="background-image: url(resources/resources/images/back3.jpg);">
+<section class="d-flex align-items-center dark-overlay bg-cover" style="background-image: url(<%=path%>/resources/resources/images/back3.jpg);">
         <div class="container py-6 py-lg-7 text-white overlay-content text-center">
             <div class="row">
                 <div class="col-xl-10 mx-auto">

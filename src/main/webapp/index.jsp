@@ -197,7 +197,6 @@ List<Blog> blogList = (List<Blog>) request.getAttribute("blogListTop");
         </div>
     </section>
     <!--  자유게시판, 쇼핑, 안전교육 유튜브 섹션  -->
-    <section class="py-4">
         <section class="py-4">
         <div class="container">
             <div class="row">
@@ -254,7 +253,4 @@ List<Blog> blogList = (List<Blog>) request.getAttribute("blogListTop");
             </div>
     </section>
     
-    
-    
-    <!--  자유게시판, 쇼핑, 안전교육 유튜브 섹션 끝  -->
 <%@include file="/views/common/footer.jsp" %>
